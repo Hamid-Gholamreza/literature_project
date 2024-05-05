@@ -14,7 +14,7 @@ class RegistrationForm extends Component {
                 <div className="form">
                     <div className="switch-form">                        
                         <Link to={'/login'} className="links" id="login">ورود</Link>
-                        <Link to={'/register'} className="links" id="register">ثبت نام</Link>
+                        <Link to={'/register'} className="links selected-register" id="register">ثبت نام</Link>
                     </div>
                 </div>
             </div>

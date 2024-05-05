@@ -12,9 +12,19 @@ class LoginForm extends Component {
                 </div>
                 <div className="form">
                     <div className="switch-form">
-                        <Link to={'/login'} className="links" id="login">ورود</Link>
+                        <Link to={'/login'} className="links selected-login" id="login">ورود</Link>
                         <Link to={'/register'} className="links" id="register">ثبت نام</Link>
                     </div>
+                        <label htmlFor="">نام کاربری</label>
+                        <div className="input">
+                            <input type="text" />
+                        </div>
+                        <label htmlFor="">رمز عبور</label>
+                        <div className="input">
+                        <input type="password" />
+                        </div>
+                        <button className="submit-button">ورود</button>
+                        <p>رمز عبور را فراموش کرده اید؟<Link>فراموشی رمز عبور</Link></p>
                 </div>
             </div>
         )
