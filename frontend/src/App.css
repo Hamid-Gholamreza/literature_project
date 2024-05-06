@@ -11,6 +11,10 @@
   src: local('B Nazanin'), url('./fonts/B-NAZANIN.TTF') format('truetype');
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
 
 html,
 body {
@@ -27,10 +31,6 @@ body {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -89,7 +89,7 @@ body {
   width: 30%;
   z-index: 0;
   left: 35%;
-  top: 20%;
+  top: 15%;
   height: 450px;
   background-color: rgba(0, 0, 0, 0.8);
 }
@@ -165,13 +165,30 @@ label {
 }
 
 .forget-password {
-  font-size: 20px;
+  font-size: 18px;
   text-decoration: none;
   color: white;
   direction: rtl;
   margin-right: 30px;
+  margin-top: 20px;
 }
 
 .forget-password a {
   color: yellow;
+}
+
+/************************************************ Registration section **************************************************/
+
+.registration {
+  margin-bottom: -24px;
+  padding-top: -5px;
+}
+
+.registration label {
+  font-size: 18px;
+}
+
+.background {
+  margin: 0;
+  padding: 0;
 }
