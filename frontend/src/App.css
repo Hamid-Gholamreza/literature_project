@@ -19,6 +19,10 @@ body {
   overflow-x: hidden;
 }
 
+* a {
+  text-decoration: none;
+}
+
 .App {
   text-align: center;
 }
@@ -143,6 +147,7 @@ label {
   font-family: var(--normal-font);
   width: 90%;
   height: 40px;
+  background-color: aqua;
 }
 
 .form .input {
@@ -157,4 +162,16 @@ label {
   width: 90%;
   direction: rtl;
   height: 30px;
+}
+
+.forget-password {
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  direction: rtl;
+  margin-right: 30px;
+}
+
+.forget-password a {
+  color: yellow;
 }

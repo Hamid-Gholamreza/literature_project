@@ -24,7 +24,7 @@ class LoginForm extends Component {
                         <input type="password" />
                         </div>
                         <button className="submit-button">ورود</button>
-                        <p>رمز عبور را فراموش کرده اید؟<Link>فراموشی رمز عبور</Link></p>
+                        <p className="forget-password">رمز عبور را فراموش کرده اید؟<Link>فراموشی رمز عبور</Link></p>
                 </div>
             </div>
         )
