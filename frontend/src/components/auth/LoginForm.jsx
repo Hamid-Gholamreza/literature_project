@@ -15,16 +15,31 @@ class LoginForm extends Component {
                         <Link to={'/login'} className="links selected-login" id="login">ورود</Link>
                         <Link to={'/register'} className="links" id="register">ثبت نام</Link>
                     </div>
-                        <label htmlFor="">نام کاربری</label>
-                        <div className="input">
-                            <input type="text" />
+
+                    <form action="">
+                        <div className="field-container">
+                            <div>
+                                <label htmlFor="">نام کاربری</label>
+                            </div>
+                            <div>
+                                <input type="text" className="input-field" />
+                            </div>
                         </div>
-                        <label htmlFor="">رمز عبور</label>
-                        <div className="input">
-                        <input type="password" />
+                        <div className="field-container">
+                            <div>
+                                <label htmlFor="">کلمه عبور</label>
+                            </div>
+                            <div>
+                                <input type="password" className="input-field" />
+                            </div>
                         </div>
-                        <button className="submit-button">ورود</button>
-                        <p className="forget-password">رمز عبور را فراموش کرده اید؟ &nbsp;&nbsp;<Link to={'/forget-password'}>فراموشی رمز عبور</Link></p>
+                        <div className="field-container">
+                            <input type="submit" value="ورود" />
+                        </div>
+                        <div className="field-container forget-password">
+                            <p>رمز عبور را فراموش کرده اید؟ &nbsp; &nbsp;<Link to={'/forget-password'}>فراموشی رمز عبور</Link></p>
+                        </div>
+                    </form>
                 </div>
             </div>
         )
