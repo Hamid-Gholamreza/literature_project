@@ -169,6 +169,7 @@ label {
 
 .field-container input {
   border-radius: 10px;
+  width: 90%;
   display: flex;
   height: 30px;
 }
@@ -205,13 +206,8 @@ label {
   direction: rtl;
   margin-right: 100px;
 }
-/***********************************************************************************************/
 
-.input-field {
-  width: 90%;
-}
-
-.submit-button {
+/* .submit-button {
   font-family: var(--normal-font);
   font-weight: bolder;
   font-size: 23px;
@@ -221,34 +217,36 @@ label {
   width: 90%;
   height: 40px;
   background-color: aqua;
-}
+} */
 
-.form .input {
-  width: 100%;
-}
-
-.form input .login-data {
-  background-color: white;
-  border-radius: 10px;
-  float: right;
-  margin: 0 20px;
-  width: 90%;
-  direction: rtl;
-  height: 30px;
-}
 
 /************************************************ Registration section **************************************************/
 
-.registration {
-  margin-bottom: -24px;
-  padding-top: -5px;
-}
-
-.registration label {
+.register {
   font-size: 18px;
+  margin-bottom: 5px;
 }
 
-.background {
-  margin: 0;
-  padding: 0;
+.register:first-child {
+  margin-top: 10px;
+}
+
+.field-div {
+  height: 30px;
+}
+
+#submit-register {
+  margin-top: 5px;
+  height: 40px;
+}
+
+/****************************************Forget-password section *********************************************/
+.field-container #forget-password-label {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+} 
+
+#forget-password {
+  height: 300px;
 }

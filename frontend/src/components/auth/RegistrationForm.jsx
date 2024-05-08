@@ -14,31 +14,43 @@ class RegistrationForm extends Component {
                         <Link to={'/login'} className="links" id="login">ورود</Link>
                         <Link to={'/register'} className="links selected-register" id="register">ثبت نام</Link>
                     </div>
-                    <div className="registration">
-                        <label htmlFor="">نام کاربری</label>
-                        <div className="input">
-                            <input type="text" />
+                    <form action="">
+                        <div className="field-container">
+                            <div>
+                                <label  htmlFor="" className="register">نام کاربری</label>
+                            </div>
+                            <div className="field-div">
+                                <input type="text" className="register-field" />
+                            </div>
                         </div>
-                    </div>
-                    <div className="registration">
-                        <label htmlFor="">شماره همراه</label>
-                        <div className="input">
-                            <input type="phone" />
+                        <div className="field-container">
+                            <div>
+                                <label htmlFor="" className="register">شماره همراه</label>
+                            </div>
+                            <div className="field-div">
+                                <input type="text" className="register-field" />
+                            </div>
                         </div>
-                    </div>
-                    <div className="registration">
-                        <label htmlFor="">ایمیل</label>
-                        <div className="input">
-                            <input type="email" />
+                        <div className="field-container">
+                            <div>
+                                <label htmlFor="" className="register">ایمیل</label>
+                            </div>
+                            <div className="field-div">
+                                <input type="email" className="register-field" />
+                            </div>
                         </div>
-                    </div>
-                    <div className="registration">
-                        <label htmlFor="">پسورد</label>
-                        <div className="input">
-                            <input type="password" />
+                        <div className="field-container">
+                            <div>
+                                <label htmlFor="" className="register">کلمه عبور</label>
+                            </div>
+                            <div className="field-div">
+                                <input type="password" className="register-field" />
+                            </div>
                         </div>
-                    </div>
-                    <button className="submit-button">ثبت نام</button>
+                        <div className="field-container">
+                            <input type="submit" value="ثبت نام" className="submit-register" id="submit-register"/>
+                        </div>
+                    </form>
                 </div>
             </div>
         )
