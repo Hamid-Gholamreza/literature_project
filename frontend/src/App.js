@@ -4,6 +4,7 @@ import LogoutForm from '../src/components/auth/LogoutForm';
 import RegistrationForm from '../src/components/auth/RegistrationForm';
 import ForgetPassword from './components/auth/ForgetPassword';
 import { BrowserRouter as Router ,Routes, Route, Link } from 'react-router-dom';
+import Poem from './components/Poem';
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
             <Route path='/logout' Component={LogoutForm}/>
             <Route path='/login' Component={LoginForm}/>
             <Route path='/forget-password' Component={ForgetPassword} />
+        </Routes>
+        <Routes>
+            <Route path='/poem' Component={Poem}/>
         </Routes>
     </Router>
   );

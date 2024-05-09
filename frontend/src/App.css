@@ -2,13 +2,17 @@
   --p-size: 25px;
 
   --normal-font: 'B Nazanin', sans-serif;
+  --styled-font: 'IranNastaliq', sans-serif
 }
-
-
 
 @font-face {
   font-family: 'B Nazanin';
   src: local('B Nazanin'), url('./fonts/B-NAZANIN.TTF') format('truetype');
+}
+
+@font-face {
+  font-family: 'IranNastaliq';
+  src: local('IranNastaliq'), url('./fonts/IranNastaliq.ttf') format('truetype');
 }
 
 * {
@@ -30,7 +34,6 @@ body {
 .App {
   text-align: center;
 }
-
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -65,6 +68,8 @@ body {
 .links {
   text-decoration: none;
 }
+
+
 
 /***************************************************** Login section **************************************************/
 .login-picture {
@@ -126,7 +131,7 @@ body {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 0 20px 0 0;
 }
-/********************************************/
+
 .form form {
   display: flex;
   flex-direction: column;
@@ -207,21 +212,9 @@ label {
   margin-right: 100px;
 }
 
-/* .submit-button {
-  font-family: var(--normal-font);
-  font-weight: bolder;
-  font-size: 23px;
-  border-radius: 10px;
-  margin: 50px auto 0 auto;
-  font-family: var(--normal-font);
-  width: 90%;
-  height: 40px;
-  background-color: aqua;
-} */
 
 
 /************************************************ Registration section **************************************************/
-
 .register {
   font-size: 18px;
   margin-bottom: 5px;
@@ -240,6 +233,8 @@ label {
   height: 40px;
 }
 
+
+
 /****************************************Forget-password section *********************************************/
 .field-container #forget-password-label {
   display: flex;
@@ -250,3 +245,60 @@ label {
 #forget-password {
   height: 300px;
 }
+
+
+
+/***************************************Poem section *********************************************************/
+.poem-background {
+  display: flex;
+  margin: 0 auto;
+  width: 70vw;
+  height: 150vh;
+  position: relative;
+  z-index: -1;
+  overflow: hidden;
+  opacity: 0.9;
+}
+
+.poem-container {
+  position: absolute;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+  background-color: white;
+  border-radius: 20px;
+  border: 2px solid black;
+  font-size: 23px;
+  font-weight: normal;
+  width: 40%;
+  left: 30%;
+  top: 30%;
+}
+
+.poem-text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+}
+
+.poem {
+  display: inline;
+  font-family: var(--styled-font);
+  font-size: 35px;
+  margin: 0;
+  direction: rtl;
+  float: right;
+  width: 50%;
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+
+.text-container {
+  width: 100%;
+}
+
