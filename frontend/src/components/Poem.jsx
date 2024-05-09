@@ -57,8 +57,8 @@ class Poem extends Component {
                         </div>
                     </div>
                     <div className="button-container">
-                        <button><Link to={'###'}>شعر بعدی</Link></button>
-                        <button><Link to={'###'}>شعر قبلی</Link></button>
+                        <button><Link to={'####'}>شعر قبلی</Link></button>
+                        <button><Link to={'####'}>شعر بعدی</Link></button>
                     </div>
                 </div>
             </div>
