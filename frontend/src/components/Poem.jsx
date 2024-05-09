@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import picture from '../images/poem-background.jpeg'
-
+import { Link } from "react-router-dom";
 
 
 class Poem extends Component {
@@ -43,6 +43,9 @@ class Poem extends Component {
                     <img src={picture} alt="poem background" className="poem-background" />
                 </div>
                 <div className="poem-container">
+                    <div className="poem-header">
+                        <h1>رباعی شماره ۱</h1>
+                    </div>
                     <div className="poem-text">        
                         <div className="text-container">
                             <p className="poem first">برخیز بتا بیا ز بهر دل ما</p>
@@ -52,6 +55,10 @@ class Poem extends Component {
                             <p className="poem first">یک کوزه شراب تا به هم نوش کنیم</p>
                             <p className="poem second">زآن پیش که کوزه‌ها کنند از گل ما</p>
                         </div>
+                    </div>
+                    <div className="button-container">
+                        <button><Link to={'###'}>شعر بعدی</Link></button>
+                        <button><Link to={'###'}>شعر قبلی</Link></button>
                     </div>
                 </div>
             </div>
