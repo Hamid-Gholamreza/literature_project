@@ -247,7 +247,7 @@ label {
 
 
 
-/***************************************Poem section *********************************************************/
+/**********************************************Poem section ***************************************************/
 .poem-background {
   display: flex;
   flex-direction: row;
@@ -259,6 +259,7 @@ label {
   overflow: hidden;
   opacity: 0.9;
   background-color: black;
+  background-size: cover;
 }
 
 .poem-header {
@@ -269,12 +270,12 @@ label {
 }
 
 .poem-header h1 {
-  font-family: var(--normal-font);
-  font-size: 40px;
+  font-family: var(--styled-font);
+  font-size: 60px;
+  font-weight: normal;
 }
 
 .poem-container {
-  
   position: absolute;
   z-index: 0;
   display: flex;
@@ -284,7 +285,6 @@ label {
   height: 450px;
   background-color: #c78065;
   border-radius: 20px;
-  /* border: 2px solid black; */
   font-size: 23px;
   font-weight: normal;
   width: 40%;
@@ -354,4 +354,175 @@ label {
 
 .back {
   background-color: black;
+}
+
+
+@media screen and (max-width: 1442px){
+
+  .poem {
+    font-size: 33px;
+    padding: 0 50px;
+  }
+
+  .poem-header h1 {
+    font-size: 55px;
+  }
+}
+
+@media screen and (max-width: 1388px) {
+
+  .poem {
+    padding: 0 38px;
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 1242px) {
+
+  .poem {
+    font-size: 32px;
+    padding: 0 25px;
+  }
+
+  .poem-header h1 {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 1111px) {
+
+  .poem-background {
+    width: 100vw;
+  }
+
+  .poem-container {
+    width: 50%;
+    left: 25%;
+    top: 30%;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .poem-container {
+    width: 61%;
+    left: 20%;
+  }
+  
+  .poem {
+    padding: 0 40px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 792px) {
+  .poem-header h1 {
+    font-size: 45px;
+  }
+
+  .poem {
+    padding: 0 25px;
+  }
+}
+
+@media screen and (max-width: 694px) {
+  .poem-container {
+    width: 60%;
+    height: 380px;
+  }
+
+  .poem-header h1 {
+    font-size: 40px;
+  }
+
+  .poem {
+    font-size: 25px;
+    padding: 0 20px;
+  }
+  
+  .button-container button {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 582px) {
+
+  .poem-background {
+    height: 100vh;
+  }
+
+  .poem-container {
+    height: 350px;
+    left: 20%;
+    top: 20%;
+  }
+
+  .poem {
+    padding: 0 15px;
+    font-size: 23px;
+  }
+}
+
+@media screen and (max-width: 514px) {
+
+  .poem-container {
+    height: 330px;
+  }
+
+  .poem-header h1 {
+    font-size: 35px;
+  }
+
+  .poem {
+    padding: 0 12px;
+    font-size: 21px;
+  }
+}
+
+@media screen and (max-width: 457px) {
+
+  .poem-background {
+    height: 100vh;
+  }
+
+  .poem-header h1 {
+    font-size: 35px;
+  }
+
+  .poem-container {
+    width: 65%;
+    height: 280px;
+    left: 18%;
+    top: 25%;
+  }
+
+  .poem {
+    padding: 0 10px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 394px) {
+  
+
+  .poem-header h1 {
+    font-size: 30px;
+  }
+
+  .poem-container {
+    height: 280px;
+    width: 70%;
+    left: 15%;
+  }
+
+  .poem {
+    padding: 0 8px;
+    font-size: 17px;
+  }
+
+  .button-container button {
+    width: 80px;
+    height: 26px;
+    font-size: 12px;
+    margin-top: 0px;
+  }
 }

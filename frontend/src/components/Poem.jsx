@@ -8,7 +8,7 @@ class Poem extends Component {
     getPoem = () => {
         const poemText = `برخیز بتا بیا ز بهر دل ما/حل کن به جمال خویشتن مشکل ما/یک کوزه شراب تا به هم نوش کنیم/زآن پیش که کوزه‌ها کنند از گل ما/`
         let poemPart = [];
-        let flag = false
+        let flag = false;
         let html = [];
 
         for (let i = 0; i < poemText.length; i++) {
