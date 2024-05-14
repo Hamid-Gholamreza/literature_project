@@ -1,3 +1,49 @@
 from django.db import models
 
-# Create your models here.
+
+class Cat(models.Model):
+    name = models.CharField(max_length=40)
+    poet_id = models.IntegerField(null=True, blank=True)
+    parent_id = models.IntegerField(null=True, blank=True)
+    url = models.CharField(max_length=255, null=True, blank=True)
+
+    def __str__(self) -> str:
+        return self.name
+    
+    class Meta:
+        ordering = ['name']
+
+class Poet(models.Model): # شاعر
+    name = models.CharField(max_length=50)
+    description = models.TextField(max_length=255)
+    cat_id = models.ManyToManyField(Cat)
+
+
+    def __str__(self) -> str:
+        return self.name
+    
+    class Meta:
+        ordering = ['name']
+
+class Poem(models.Model): # شعر
+    title = models.CharField(max_length=50)
+    artist = models.ForeignKey(Poet, on_delete=models.PROTECT, related_name='poets')
+
+
+    def __str__(self) -> str:
+        return self.title
+    
+    class Meta:
+        ordering = ['title']
+
+class Verse(models.Model):
+    vorder = models.IntegerField() # 1, 2, 3, 4, ...
+    position = models.IntegerField() # 0, 1
+    text = models.TextField()
+    poem_id = models.ForeignKey(Poem, on_delete=models.CASCADE, related_name='poems')
+
+    def __str__(self) -> str:
+        return self.text
+    
+    class Meta:
+        ordering = ['position']
