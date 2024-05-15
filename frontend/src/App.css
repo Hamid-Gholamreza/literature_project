@@ -228,9 +228,59 @@ label {
 }
 
 #submit-register {
+  background-color: yellow;
+  border: none;
   margin-top: 5px;
   height: 40px;
 }
+
+#submit-register:hover {
+  background-color: orangered;
+}
+
+@media screen and (max-width: 990px) {
+
+  #submit-register {
+    font-size: 18px;
+  }
+
+  .form {
+    width: 40%;
+    left: 30%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+
+  .form {
+    width: 50%;
+    left: 24%;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .form {
+    width: 60%;
+    left: 20%;
+  }
+}
+
+@media screen and (max-width: 460px) {
+
+  .form {
+    width: 70%;
+    left: 15%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  
+  .form {
+    width: 80%;
+    left: 10%;
+  }
+}
+
 
 
 
