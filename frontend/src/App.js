@@ -4,8 +4,9 @@ import LogoutForm from '../src/components/auth/LogoutForm';
 import RegistrationForm from '../src/components/auth/RegistrationForm';
 import ForgetPassword from './components/auth/ForgetPassword';
 import HomePage from './components/HomePage';
-import { BrowserRouter as Router ,Routes, Route, Link } from 'react-router-dom';
 import Poem from './components/Poem';
+import ListOfPoems from './components/ListOfPoems';
+import { BrowserRouter as Router ,Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Routes>
             <Route path='/poem' Component={Poem}/>
             <Route path='/home' Component={HomePage} />
+            <Route path='/list-of-poems' Component={ListOfPoems} />
         </Routes>
     </Router>
   );
