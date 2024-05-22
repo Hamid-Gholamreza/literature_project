@@ -1,11 +1,15 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
+import background from '../images/homepage-background.jpg';
 
 
 class HomePage extends Component {
     render() {
         return (
             <div className="home">
+                <div className="homepage-background">
+                    <img src={background} alt="" />
+                </div>
                 <div id="home-container">
                     <div className="section top-left">
                         <Link to={'/list-of-poems'}>اشعار</Link>
