@@ -704,3 +704,88 @@ label {
 .bottom-right {
   border-bottom-right-radius: 20px;
 }
+
+@media screen and (max-width: 1045px) {
+  
+  #home-container {
+    width: 60%;
+  }
+}
+
+
+@media screen and (max-width: 860px) {
+
+  #home-container {
+    height: 55%;
+  }
+
+  #home-container .section {
+    font-size: 23px;
+  }
+  
+  #home-container .section a:hover {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+
+  #home-container {
+    width: 65%;
+    height: 50%;
+  }
+
+  #home-container .section {
+    font-size: 21px;
+  }
+  
+  #home-container .section a:hover {
+    font-size: 23px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  #home-container {
+    height: 45%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  
+  #home-container {
+    width: 70%;
+  }
+
+  #home-container .section a {
+    font-size: 21px;
+  }
+
+  #home-container .section a:hover {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+
+  #home-container {
+    width: 80%;
+    height: 40%;
+  }
+
+  #home-container .section a {
+    font-size: 19px;
+  }
+  
+  #home-container .section a:hover {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  
+  #home-container {
+    height: 35%;
+  }
+}
+
+/************************************** List of poems section ***********************************************/
