@@ -3,8 +3,8 @@ from django.db import models
 
 class Cat(models.Model):
     name = models.CharField(max_length=40)
-    poet_id = models.IntegerField(null=True, blank=True)
-    parent_id = models.IntegerField(null=True, blank=True)
+    poet_id = models.PositiveIntegerField(null=True, blank=True)
+    parent_id = models.PositiveIntegerField(null=True, blank=True)
     url = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self) -> str:
@@ -12,10 +12,12 @@ class Cat(models.Model):
     
     class Meta:
         ordering = ['name']
+        verbose_name = 'دسته بندی'
+        verbose_name_plural = 'دسته بندی ها'
 
 class Poet(models.Model): # شاعر
     name = models.CharField(max_length=50)
-    description = models.TextField(max_length=255)
+    description = models.TextField(max_length=255, null=True, blank=True)
     cat_id = models.ManyToManyField(Cat)
 
 
@@ -23,18 +25,23 @@ class Poet(models.Model): # شاعر
         return self.name
     
     class Meta:
-        ordering = ['name']
+        ordering = ['id']
+        verbose_name = 'شاعر'
+        verbose_name_plural = 'شاعران'
 
 class Poem(models.Model): # شعر
     title = models.CharField(max_length=50)
     artist = models.ForeignKey(Poet, on_delete=models.PROTECT, related_name='poets')
 
 
+
     def __str__(self) -> str:
         return self.title
     
     class Meta:
-        ordering = ['title']
+        ordering = ['id']
+        verbose_name = 'شعر'
+        verbose_name_plural = 'اشعار'
 
 class Verse(models.Model):
     vorder = models.IntegerField() # 1, 2, 3, 4, ...
@@ -46,4 +53,6 @@ class Verse(models.Model):
         return self.text
     
     class Meta:
-        ordering = ['position']
+        ordering = ['poem_id', 'vorder']
+        verbose_name = 'متن شعر'
+        verbose_name_plural = 'متن اشعار'
