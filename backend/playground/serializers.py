@@ -27,4 +27,5 @@ class VerseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Verse
         fields = ['id', 'vorder', 'position', 'text', 'poem_id']
+        many=True
     poem_id = PoemsSerializer()
