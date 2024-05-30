@@ -18,7 +18,7 @@ function App() {
             <Route path='/forget-password' Component={ForgetPassword} />
         </Routes>
         <Routes>
-            <Route path='/poem' Component={Poem}/>
+            <Route path='/poem/:id' Component={Poem}/>
             <Route path='/home' Component={HomePage} />
             <Route path='/list-of-poems' Component={ListOfPoems} />
         </Routes>
