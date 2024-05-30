@@ -3,15 +3,15 @@ from . import views
 
 urlpatterns = [
 
-    path('cats', views.cat, name='poets'),
+    path('cats', views.CatView.as_view(), name='poets'),
     path('cats/<int:id>', views.cat_detail, name='poets-detail'),
 
-    path('poems', views.poems, name='poems'),
-    path('poems/<int:id>', views.poems_detail, name='poems-detail'),
+    path('poems', views.PoemsView.as_view(), name='poems'),
+    path('poems/<int:id>', views.PoemDetailView.as_view(), name='poems-detail'),
 
-    path('poets', views.poet, name='poets'),
-    path('poets/<int:id>', views.poet_detail, name='poets-detail'),
+    path('poets', views.PoetView.as_view(), name='poets'),
+    path('poets/<int:id>', views.PoetDetailView.as_view(), name='poets-detail'),
 
-    path('verses', views.verse, name='verses'),
+    path('verses', views.VerseListView.as_view(), name='verses'),
     path('verses/<int:id>', views.verse_detail, name='verses-detail'),
 ]
