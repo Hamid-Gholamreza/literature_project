@@ -36,8 +36,8 @@ def poet(request):
 
 @api_view()
 def poet(request, id):
-    query_set = Poet.objects.prefetch_related('cat_id').all()
-    serializer = PoetSerializer(query_set, many=True)
+    poet = get_object_or_404(Poet, pk=id)
+    serializer = PoetSerializer(poet, many=True)
     return Response(serializer.data)
 
 
