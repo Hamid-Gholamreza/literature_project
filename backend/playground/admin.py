@@ -1,6 +1,4 @@
 from django.contrib import admin
-from django.urls import reverse
-from django.utils.html import format_html
 from .models import Verse, Cat, Poem, Poet
 
 
@@ -12,6 +10,8 @@ class VerseAdmin(admin.ModelAdmin):
     list_select_related = ['poem_id']
     list_filter = ['poem_id']
     search_fields = ['text']
+    collapse_filter = True
+
 
 class PoemAdmin(admin.ModelAdmin):
     list_display = ['title','artist']

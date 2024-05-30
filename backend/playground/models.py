@@ -12,8 +12,8 @@ class Cat(models.Model):
     
     class Meta:
         ordering = ['name']
-        verbose_name = 'دسته بندی'
-        verbose_name_plural = 'دسته بندی ها'
+        verbose_name = ''
+        verbose_name_plural = '1. دسته بندی ها'
 
 class Poet(models.Model): # شاعر
     name = models.CharField(max_length=50)
@@ -26,8 +26,8 @@ class Poet(models.Model): # شاعر
     
     class Meta:
         ordering = ['id']
-        verbose_name = 'شاعر'
-        verbose_name_plural = 'شاعران'
+        verbose_name = ''
+        verbose_name_plural = '2. شاعران'
 
 class Poem(models.Model): # شعر
     title = models.CharField(max_length=50)
@@ -40,8 +40,8 @@ class Poem(models.Model): # شعر
     
     class Meta:
         ordering = ['id']
-        verbose_name = 'شعر'
-        verbose_name_plural = 'اشعار'
+        verbose_name = ''
+        verbose_name_plural = '3. اشعار'
 
 class Verse(models.Model):
     vorder = models.IntegerField() # 1, 2, 3, 4, ...
@@ -54,5 +54,5 @@ class Verse(models.Model):
     
     class Meta:
         ordering = ['poem_id', 'vorder']
-        verbose_name = 'متن شعر'
-        verbose_name_plural = 'متن اشعار'
+        verbose_name = ''
+        verbose_name_plural = '4. متن اشعار'
