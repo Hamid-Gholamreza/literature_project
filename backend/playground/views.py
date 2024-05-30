@@ -1,5 +1,4 @@
-from django.http import JsonResponse
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Poem, Verse, Cat, Poet
@@ -13,6 +12,20 @@ from .serializers import PoemsSerializer, VerseSerializer, PoetSerializer, CatSe
 #     print(poems)
 
 #     return render(request, 'index.html', {'poems': list(poems)})
+
+
+@api_view()
+def cat(request):
+    query_set = Cat.objects.all().order_by()
+    serializer = CatSerializer(query_set, many=True)
+    return Response(serializer.data)
+
+@api_view()
+def cat_detail(request, id):
+    cat = get_object_or_404(Cat, pk=id)
+    serializer = CatSerializer(cat)
+    return Response(serializer.data)
+
 
 @api_view()
 def poems(request):
@@ -35,9 +48,9 @@ def poet(request):
     return Response(serializer.data)
 
 @api_view()
-def poet(request, id):
+def poet_detail(request, id):
     poet = get_object_or_404(Poet, pk=id)
-    serializer = PoetSerializer(poet, many=True)
+    serializer = PoetSerializer(poet)
     return Response(serializer.data)
 
 
@@ -52,6 +65,5 @@ def verse(request):
 @api_view()
 def verse_detail(request, id):
     query_set = Verse.objects.filter(poem_id=id)
-    print(query_set)
     serializer = VerseSerializer(query_set, many=True)
     return Response(serializer.data)

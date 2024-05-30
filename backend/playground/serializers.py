@@ -1,6 +1,13 @@
 from rest_framework import serializers
 from playground.models import Verse, Poem, Poet, Cat
 
+class CatSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Cat
+        fields = ['id', 'name']
+    name = serializers.CharField()
+
+
 class PoemsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Poem
@@ -8,21 +15,12 @@ class PoemsSerializer(serializers.ModelSerializer):
     artist = serializers.CharField(max_length=255)
 
 
-
-class CatSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Cat
-        fields = ['id', 'name']
-
-
-
 class PoetSerializer(serializers.ModelSerializer):
+    cat_id = CatSerializer(read_only=True, many=True)
+
     class Meta:
         model = Poet
         fields = ['id', 'name', 'description', 'cat_id']
-    cat_id = CatSerializer()
-
-
 
 
 class VerseSerializer(serializers.ModelSerializer):
@@ -30,5 +28,3 @@ class VerseSerializer(serializers.ModelSerializer):
         model = Verse
         fields = ['id', 'vorder', 'position', 'text', 'poem_id']
     poem_id = PoemsSerializer()
-
-

@@ -17,7 +17,7 @@ class Cat(models.Model):
 
 class Poet(models.Model): # شاعر
     name = models.CharField(max_length=50)
-    description = models.TextField(max_length=255, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
     cat_id = models.ManyToManyField(Cat)
 
 
