@@ -16,7 +16,7 @@ class Cat(models.Model):
         verbose_name_plural = '1. دسته بندی ها'
 
 class Poet(models.Model): # شاعر
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=55)
     description = models.TextField(null=True, blank=True)
     cat_id = models.ManyToManyField(Cat)
 

@@ -19,7 +19,7 @@ class PoemAdmin(admin.ModelAdmin):
     search_fields = ['title']
 
 class CatAdmin(admin.ModelAdmin):
-    fields = ['name']
+    fields = ['name', 'poet_id']
     list_display = ['name', 'poet_id']
 
 admin.site.register(Cat, CatAdmin)
