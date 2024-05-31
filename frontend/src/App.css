@@ -789,3 +789,65 @@ label {
 }
 
 /************************************** List of poems section ***********************************************/
+
+.list-of-poems-background {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 100vw;
+  height: 200vh;
+  position: relative;
+  z-index: -1;
+  overflow: hidden;
+  opacity: 0.9;
+  background-color: black;
+  background-size: cover;
+}
+
+.poem-link {
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: var(--normal-font);
+  margin: 5px;
+}
+
+
+.links-container {
+  position: absolute;
+  z-index: 0;
+  display: grid;
+  direction: rtl;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column: auto;
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 75%;
+  border-radius: 20px;
+  left: 12.5%;
+  top: 3%;
+}
+
+
+.links-container a:hover {
+  font-weight: bolder;
+}
+
+/* .links-container a:nth-child(5n - 4) {
+  order: 1;
+}
+
+.links-container a:nth-child(5n - 3) {
+  order: 2;
+}
+
+.links-container a:nth-child(5n - 2) {
+  order: 3;
+}
+
+.links-container a:nth-child(5n - 1) {
+  order: 4;
+} */

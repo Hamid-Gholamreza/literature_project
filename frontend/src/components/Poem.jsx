@@ -1,4 +1,5 @@
-import React, {Component, useEffect, useState} from "react";
+import React, {Component} from "react";
+import { useParams } from 'react-router-dom';
 import picture from '../images/poem-background.jpeg'
 import { Link } from "react-router-dom";
 import axios from 'axios';
@@ -10,20 +11,19 @@ class Poem extends Component {
         super(props);
         this.state = {
             data: null,
-            loading: true
+            loading: true,
         };
     }
 
-    componentDidMount() {
+    componentDidMount() {   
         this.fetchData();
     }
 
     fetchData = async () => {
         try {
-            const response = await axios.get('http://127.0.0.1:8000/verses/1');
-            console.log(response.data);
+            const response = await axios.get(`http://127.0.0.1:8000/verses/1`);
             this.setState({ data: [response.data[0].text, response.data[1].text, response.data[2].text, response.data[3].text], loading: false ,
-                poem_header: response.data[0].poem_id.title
+                poem_header: response.data[0].poem_id.title, poem_id: response.data[0].poem_id.id
             });
         }
         catch (error) {
@@ -34,8 +34,9 @@ class Poem extends Component {
 
     render() {
 
-        const {data, loading, poem_header} = this.state;
-        
+        const {data, loading, poem_header, poem_id} = this.state;
+
+
         if (!loading) {
             return (
                 <div>
@@ -58,7 +59,7 @@ class Poem extends Component {
                         </div>
                         <div className="button-container">
                             <button><Link to={'####'}>شعر قبلی</Link></button>
-                            <button><Link to={'####'}>شعر بعدی</Link></button>
+                            <button><Link to={`/poem/${poem_id + 1}`}>شعر بعدی</Link></button>
                         </div>
                     </div>
                 </div>
