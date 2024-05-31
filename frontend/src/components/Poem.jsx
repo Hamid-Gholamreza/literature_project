@@ -3,15 +3,15 @@ import { useParams } from 'react-router-dom';
 import picture from '../images/poem-background.jpeg'
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import NotFound404 from "./NotFound404";
 
 
 
 function Poem(props) {
     const [data, setData] = useState(null);
-    const { id } = useParams(); 
+    const { id } = useParams();
 
     useEffect(() => {
-        console.log(id)
         const fetchData = async() => {
             try {
                 const response = await axios.get(`http://127.0.0.1:8000/verses/${id}`);

@@ -1,7 +1,7 @@
 :root {
   --p-size: 25px;
   --normal-font: 'B Nazanin', sans-serif;
-  --styled-font: 'IranNastaliq', sans-serif
+  --styled-font: IranNastaliq,'IranNastaliq',tahoma;
 }
 
 @font-face {
@@ -13,6 +13,7 @@
   font-family: 'IranNastaliq';
   src: local('IranNastaliq'), url('./fonts/IranNastaliq.ttf') format('truetype');
 }
+
 
 * {
   margin: 0;
@@ -367,7 +368,7 @@ label {
 
 .poem-header h1 {
   font-family: var(--styled-font);
-  font-size: 60px;
+  font-size: 53px;
   font-weight: normal;
 }
 
@@ -399,12 +400,12 @@ label {
 .poem {
   display: inline;
   font-family: var(--styled-font);
-  font-size: 35px;
+  font-size: 30px;
   margin: 0;
   direction: rtl;
   float: right;
   width: 50%;
-  padding: 0 50px;
+  padding: 0 30px;
   box-sizing: border-box;
 }
 
@@ -436,7 +437,7 @@ label {
 
 .button-container a {
   text-decoration: none;
-  color: #282c34;
+  color: black;
   display: block;
   width: 100%;
   height: 100%;
@@ -445,6 +446,7 @@ label {
 
 .button-container a:hover {
   background-color: #282c34;
+  font-weight: bold;
   color: white;
 }
 
@@ -836,18 +838,40 @@ label {
   font-weight: bolder;
 }
 
-/* .links-container a:nth-child(5n - 4) {
-  order: 1;
+/************************************** NotFound404 section ***********************************************/
+
+.not-found-container {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.links-container a:nth-child(5n - 3) {
-  order: 2;
+.not-found-container h1 {
+  font-family: var(--styled-font);
+  font-weight: normal;
+  padding: 20px;
+  font-size: 40px;
 }
 
-.links-container a:nth-child(5n - 2) {
-  order: 3;
+.not-found-container button {
+  margin-top: 30px;
+  font-family: var(--normal-font);
+  font-size: 20px;
+  background-color: orangered;
+  border-radius: 20px;
 }
 
-.links-container a:nth-child(5n - 1) {
-  order: 4;
-} */
+.not-found-container a {
+  display: block;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+.not-found-container a:hover {
+  color: black;
+  background-color: red;
+}

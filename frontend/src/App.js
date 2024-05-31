@@ -6,6 +6,7 @@ import ForgetPassword from './components/auth/ForgetPassword';
 import HomePage from './components/HomePage';
 import Poem from './components/Poem';
 import ListOfPoems from './components/ListOfPoems';
+import NotFound404 from './components/NotFound404';
 import { BrowserRouter as Router ,Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <Router>
         <Routes>
             <Route path='/register' Component={RegistrationForm}/>
+            <Route path='/404' Component={NotFound404} />
             <Route path='/logout' Component={LogoutForm}/>
             <Route path='/login' Component={LoginForm}/>
             <Route path='/forget-password' Component={ForgetPassword} />
