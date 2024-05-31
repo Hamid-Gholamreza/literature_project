@@ -1,71 +1,62 @@
-import React, {Component} from "react";
+import React, {Component, useState, useEffect} from "react";
 import { useParams } from 'react-router-dom';
 import picture from '../images/poem-background.jpeg'
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
 
-class Poem extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: null,
-            loading: true,
+function Poem(props) {
+    const [data, setData] = useState(null);
+    const { id } = useParams(); 
+
+    useEffect(() => {
+        console.log(id)
+        const fetchData = async() => {
+            try {
+                const response = await axios.get(`http://127.0.0.1:8000/verses/${id}`);
+                setData(response.data);
+              } catch (error) {
+                console.error('Error fetching data:', error);
+              }
         };
-    }
-
-    componentDidMount() {   
-        this.fetchData();
-    }
-
-    fetchData = async () => {
-        try {
-            const response = await axios.get(`http://127.0.0.1:8000/verses/1`);
-            this.setState({ data: [response.data[0].text, response.data[1].text, response.data[2].text, response.data[3].text], loading: false ,
-                poem_header: response.data[0].poem_id.title, poem_id: response.data[0].poem_id.id
-            });
-        }
-        catch (error) {
-            console.error('Error fetching data:', error);
-            this.setState({ loading: false });
-        };
-    }
-
-    render() {
-
-        const {data, loading, poem_header, poem_id} = this.state;
+        fetchData();
+    }, [id]);
 
 
-        if (!loading) {
-            return (
+    return (
+        <div>
+          {data ? (
+            <div>
                 <div>
-                    <div>
-                        <img src={picture} alt="poem background" className="poem-background" />
-                    </div>
-                    <div className="poem-container">
-                        <div className="poem-header">
-                            <h1>{poem_header}</h1>
-                        </div>
-                        <div className="poem-text">        
-                            <div className="text-container">
-                                <p className="poem first">{data[0]}</p>
-                                <p className="poem second">{data[1]}</p>
-                            </div>
-                            <div className="text-container">
-                                <p className="poem first">{data[2]}</p>
-                                <p className="poem second">{data[3]}</p>
-                            </div>
-                        </div>
-                        <div className="button-container">
-                            <button><Link to={'####'}>شعر قبلی</Link></button>
-                            <button><Link to={`/poem/${poem_id + 1}`}>شعر بعدی</Link></button>
-                        </div>
-                    </div>
+                    <img src={picture} alt="poem background" className="poem-background" />
                 </div>
-            )
-        }
-    }
+                <div className="poem-container">
+                    <div className="poem-header">
+                        <h1>{data[0].poem_id.title}</h1>
+                    </div>
+                    <div className="poem-text">        
+                             <div className="text-container">
+                                 <p className="poem first">{data[0].text}</p>
+                                 <p className="poem second">{data[1].text}</p>
+                             </div>
+                             <div className="text-container">
+                                 <p className="poem first">{data[2].text}</p>
+                                 <p className="poem second">{data[3].text}</p>
+                             </div>
+                         </div>
+                         <div className="button-container">
+                             <button><Link to={`/poem/${parseInt(id) - 1}`}>شعر قبلی</Link></button>
+                             <button><Link to={`/poem/${parseInt(id) + 1}`}>شعر بعدی</Link></button>
+                         </div>
+                </div>
+            </div>
+          ) : (
+            <p>در حال دریافت</p>
+          )}
+        </div>
+      );
 }
+
 
 export default Poem;
