@@ -25,3 +25,10 @@ Please activate your virtual environment before running the project and enter th
 
 
 
+![screenshot](images/admin.png)
+
+![screenshot](images/swagger1.png)
+
+![screenshot](images/swagger2.png)
+
+![screenshot](images/swagger3.png)
