@@ -8,6 +8,12 @@ django = "*"
 django-debug-toolbar = "*"
 djangorestframework = "*"
 django-haystack = "*"
+djoser = "*"
+djangorestframework-simplejwt = "*"
+django-filter = "*"
+django-allauth = {extras = ["socialaccount"], version = "*"}
+drf-yasg = {extras = ["validation"], version = "*"}
+python-dotenv = "*"
 
 [dev-packages]
 
