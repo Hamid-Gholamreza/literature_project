@@ -13,11 +13,11 @@ function App() {
   return (
     <Router>
         <Routes>
-            <Route path='/register' Component={RegistrationForm}/>
-            <Route path='/404' Component={NotFound404} />
-            <Route path='/logout' Component={LogoutForm}/>
-            <Route path='/login' Component={LoginForm}/>
-            <Route path='/forget-password' Component={ForgetPassword} />
+              <Route path='/register' Component={RegistrationForm}/>
+              <Route path='/404' Component={NotFound404} />
+              <Route path='/logout' Component={LogoutForm}/>
+              <Route path='/login' Component={LoginForm}/>
+              <Route path='/forget-password' Component={ForgetPassword} />
         </Routes>
         <Routes>
             <Route path='/poem/:id' Component={Poem}/>

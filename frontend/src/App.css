@@ -148,6 +148,7 @@ label {
 }
 
 .field-container {
+  font-family: var(--normal-font);
   direction: rtl;
   width: 100%;
   height: 30%;
