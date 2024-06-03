@@ -18,7 +18,7 @@ function LogoutForm(props) {
     handleLogout();
     return (
         <div className="logout">
-            <div className="logout-background">
+            <div className="notFound-background">
                 <img src={picture} alt="" />
             </div>          
             <div className="logout-container">
