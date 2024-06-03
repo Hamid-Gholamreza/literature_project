@@ -24,6 +24,7 @@ function LoginForm() {
         formData
       );
       const token = response.data;
+      console.log(localStorage['jwtToken']);
       localStorage.setItem('jwtToken', token);
       window.history.replaceState(null, null, '/home');
       window.location.reload();
