@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import picture from '../../images/logout-background.jpg';
+
 
 function LogoutForm(props) {
 
@@ -15,12 +17,17 @@ function LogoutForm(props) {
     }
     handleLogout();
     return (
-        <div className="logout-container">
-            <h1 className="logout-h1">خروج شما از سیستم با موفقیت انجام شد</h1>
-            <p className="logout-message">سنگ را در ناله می‌آرد وداع دوستان&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;بیستون فریاد‌ها در ماتم فرهاد کرد</p>
-            <button><Link to={'/login'}>ورود مجدد</Link></button>
+        <div className="logout">
+            <div className="logout-background">
+                <img src={picture} alt="" />
+            </div>          
+            <div className="logout-container">
+                <h1>خروج شما از سیستم با موفقیت انجام شد</h1>
+                <p>سنگ را در ناله می‌آرد وداع دوستان&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;بیستون فریاد‌ها در ماتم فرهاد کرد</p>
+                <button><Link to={'/login'}>ورود مجدد</Link></button>
+            </div>
         </div>
     )
 }
