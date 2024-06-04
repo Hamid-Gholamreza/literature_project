@@ -14,4 +14,6 @@ urlpatterns = [
 
     path('verses', views.VerseListView.as_view(), name='verses'),
     path('verses/<int:id>', views.verse_detail, name='verses-detail'),
+
+    path('random', views.random_verse, name='random'),
 ]
