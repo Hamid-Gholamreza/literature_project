@@ -28,7 +28,7 @@ function RegistrationForm(props) {
             //     console.error('Passwords do not match');
             //     return;
             //   }
-            const response = await axios.post('http://127.0.0.1:8000/auth/users', formData);
+            const response = await axios.post('http://127.0.0.1:8000/auth/users/', formData);
             console.log(response.data);
         }
         catch(error) {
