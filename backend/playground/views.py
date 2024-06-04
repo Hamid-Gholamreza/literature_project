@@ -1,12 +1,13 @@
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.decorators import api_view
+from rest_framework.status import HTTP_404_NOT_FOUND
 from rest_framework.response import Response
 from rest_framework import generics
 from rest_framework.filters import SearchFilter, OrderingFilter
 from .models import Poem, Verse, Cat, Poet
 from .serializers import PoemsSerializer, VerseSerializer, PoetSerializer, CatSerializer
-
+import random
 
 class CatView(generics.ListAPIView):
     queryset = Cat.objects.all().order_by()
@@ -88,5 +89,19 @@ class VerseListView(generics.ListAPIView):
 @api_view()
 def verse_detail(request, id):
     query_set = Verse.objects.filter(poem_id=id)
+    if not query_set:
+        return Response(status=HTTP_404_NOT_FOUND, data={'error': 'Verse not found'})
+    serializer = VerseSerializer(query_set, many=True)
+    return Response(serializer.data)
+
+
+@api_view()
+def random_verse(request):
+    """
+    List of verses that chosen randomly.
+    """
+    count_of_poems = Poem.objects.count() # 0....199
+    random_num = int(random.uniform(0, count_of_poems - 1))
+    query_set = Verse.objects.filter(poem_id=random_num)
     serializer = VerseSerializer(query_set, many=True)
     return Response(serializer.data)
