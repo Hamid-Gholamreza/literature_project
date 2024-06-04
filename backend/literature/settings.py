@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'rest_framework',
     'djoser',
-
+    'corsheaders',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -66,7 +66,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     "allauth.account.middleware.AccountMiddleware",
 
 ]
@@ -190,3 +191,7 @@ AUTHENTICATION_BACKENDS = [
 
 
 # SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/verses/' #todo by frontend
+
+
+
+CORS_ORIGIN_ALLOW_ALL = True
