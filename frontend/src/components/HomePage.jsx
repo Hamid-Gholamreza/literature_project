@@ -33,7 +33,7 @@ function HomePage(props) {
                     <Link to={'/list-of-poems'}>اشعار</Link>
                 </div>
                 <div className="section top-right">
-                    <Link>فایل های صوتی</Link>
+                    <Link to={'/list-of-audios'}>فایل های صوتی</Link>
                 </div>
                 <div className="section bottom-left">
                     <Link>تکنیک ها</Link>

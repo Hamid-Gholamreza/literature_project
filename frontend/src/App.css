@@ -1143,3 +1143,130 @@ img {
     height: 25%;
   }
 }
+
+/************************************** List of audios section ***********************************************/
+
+.list-of-audios-background {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 75%;
+  height: 100vh;
+  position: relative;
+  z-index: -1;
+}
+
+.list-of-audios-container {
+  width: 50%;
+  height: 70%;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  position: absolute;
+  z-index: 0;
+  top: 15%;
+  left: 25%;
+}
+
+.list-of-audios-container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-family: var(--normal-font);
+  font-size: 23px;
+  font-weight: bold;
+  margin: 28px auto;
+}
+
+.list-of-audios-container a:hover {
+  font-weight: bolder;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 1060px) {
+  .list-of-audios-background {
+    width: 80%;
+  }
+
+  .list-of-audios-container a{
+    font-size: 21px;
+  }
+
+  .list-of-audios-container a:hover {
+    font-weight: bolder;
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 975px) {
+  .list-of-audios-background {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .list-of-audios-background {
+    width: 100%;
+  }
+
+  .list-of-audios-container {
+    width: 55%;
+    left: 22.5%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .list-of-audios-container {
+    width: 60%;
+    left: 20%;
+  }
+
+  .list-of-audios-container a{
+    font-size: 18px;
+  }
+
+  .list-of-audios-container a:hover {
+    font-weight: bolder;
+    font-size: 19px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .list-of-audios-container {
+    width: 70%;
+    left: 15%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .list-of-audios-container {
+    width: 75%;
+    left: 10%;
+  }
+
+  .list-of-audios-container a {
+    font-size: 16px;
+  }
+
+  .list-of-audios-container a:hover {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .list-of-audios-container {
+    width: 80%;
+    left: 10%;
+  }
+
+  .list-of-audios-container a {
+    font-size: 14px;
+  }
+
+  .list-of-audios-container a:hover {
+    font-size: 15px;
+  }
+}
