@@ -1,4 +1,4 @@
-import React, {Component, useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import { useParams } from 'react-router-dom';
 import picture from '../images/poem-background.jpeg'
 import { Link } from "react-router-dom";

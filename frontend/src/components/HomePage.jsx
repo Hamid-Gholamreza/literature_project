@@ -13,12 +13,14 @@ function HomePage(props) {
         headerMenu = <div className="header-menu">
                                 <Link to='/logout'>خروج</Link>
                                 <Link to='/login'>حساب کاربری</Link>
+                                <Link to='search-poem' id="search">جستجو در اشعار</Link>
                             </div>
     }
     else {
         headerMenu = <div className="header-menu">
         <Link to='/register'>ثبت نام</Link>
         <Link to='/login'>ورود</Link>
+        <Link to='/search-poem'>جستجو در اشعار</Link>
     </div>       
     }
 
