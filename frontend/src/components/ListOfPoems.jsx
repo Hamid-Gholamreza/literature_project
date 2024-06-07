@@ -7,18 +7,18 @@ class ListOfPoems extends Component {
  
     render() {
 
-        const linkCount = 178;
+        const linkCount = 174;
 
         const links = Array.from({ length: linkCount }, (_, index) => (
-          <Link key={index} to={`http://localhost:3000/poem/${index + 1}`} className="poem-link">رباعی شماره {index+1}</Link>
+          <Link key={index} to={`http://localhost:3000/poem/${index + 1}`}>رباعی شماره {index+1}</Link>
         ));
 
         return(
             <div>
-                <div>
-                    <img src={picture} alt="poem background" className="list-of-poems-background" />
+                <div className="list-of-poems-background">
+                    <img src={picture} alt="poem background"/>
                 </div>
-                <div className="links-container">
+                <div className="list-of-poems-container">
                     {links}
                 </div>
             </div>

@@ -11,7 +11,7 @@ function ListOfAudios(props) {
             </div>
             <div className="list-of-audios-container">
                 <Link to={'/audio'}>فایل های صوتی رباعیات خیام</Link>
-                <Link to={'/audio'}>فایل های صوتی مولوی</Link>
+                <Link to={'/audio'}>فایل های صوتی مثنوی مولوی</Link>
                 <Link to={'/audio'}>فایل های صوتی غزلیات حافظ</Link>
                 <Link to={'/audio'}>فایل های صوتی شاهنامه فردوسی</Link>            
             </div>
