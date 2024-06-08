@@ -1391,7 +1391,8 @@ img {
   position: absolute;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  flex-direction: column;
   z-index: 0;
   border-radius: 20px;
   top: 15%;
@@ -1439,4 +1440,30 @@ img {
 .search-box button:hover {
   background-color: orangered;
   font-weight: bolder;
+}
+
+.results-container {
+  width: 70%;
+  height: fit-content;
+  border-radius: 20px;
+  background-color: white;
+  /* position: absolute;
+  z-index: 1;
+  top: 35%;
+  left: 15%; */
+}
+
+.results-container p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: var(--normal-font);
+  font-size: 18px;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.search-not-found {
+
 }

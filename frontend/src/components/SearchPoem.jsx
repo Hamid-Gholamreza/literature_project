@@ -5,11 +5,13 @@ import axios from "axios";
 
 
 function SearchPoem(props) {
-    // http://localhost:8000/verses?text=%D8%A2%D8%A8
     
     const [formData, setFormData] = useState({
         searchedItem: '',
       });
+    
+    const [results, setResults] = useState([]);
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -22,13 +24,14 @@ function SearchPoem(props) {
         console.log(formData.searchedItem);
         try {
             const response = await axios.get(`http://localhost:8000/verses?text=${formData.searchedItem}`);
-            console.log(response.data)
+            const responseArray = [...Object.entries(response.data)];
+            setResults(responseArray);
         }
         catch(error) {
             console.log('error happened');
         }
 
-    }
+    };
 
 
 
@@ -47,7 +50,21 @@ function SearchPoem(props) {
                     placeholder="قسمتی از شعر خود را وارد نمایید" />
                     <button onClick={handleSearch}>جستجو</button>
                 </div>
-            </div> 
+                <div className="results-container">
+                {results.length > 0 ? (
+                results.map((obj, index) => {
+                    const [stringIndex, poemData] = obj;
+                    console.log(poemData);
+                    return <p key={index} className="search-result">
+                        {poemData.poem_id.title} - {poemData.poem_id.artist} - {poemData.text}
+                        </p>
+                        }
+                    )
+                    ) : (
+                    <p className="search-not-found">نتیجه ای پیدا نشد</p>
+                    )}
+                </div>
+            </div>
         </div>
     )
 }
