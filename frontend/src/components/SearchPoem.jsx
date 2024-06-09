@@ -1,10 +1,30 @@
-import React, {useEffect, useState} from "react";
-import background from '../images/search-poem-background.jpg';
+import React, {useState} from "react";
+import background from '../images/search-poem-background.png';
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 
 function SearchPoem(props) {
+
+    const token = localStorage.getItem('jwtToken')
+    const isAuthorized = !!token;
+    let headerMenu;
+
+    if (isAuthorized) {
+        headerMenu = <div className="header-menu">
+                                <Link to='/logout'>خروج</Link>
+                                <Link to='/login'>حساب کاربری</Link>
+                                <Link to='search-poem' id="search">جستجو در اشعار</Link>
+                    </div>
+    }
+    else {
+        headerMenu = <div className="header-menu">
+        <Link to='/register'>ثبت نام</Link>
+        <Link to='/login'>ورود</Link>
+        <Link to='/search-poem'>جستجو در اشعار</Link>
+    </div>       
+    }
     
     const [formData, setFormData] = useState({
         searchedItem: '',
@@ -17,44 +37,48 @@ function SearchPoem(props) {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
         };
+    
+    
+    const links = () => {
+        const resultContainer = document.querySelector('.results-container');
+        resultContainer.style.display = 'grid';
+        resultContainer.style.gridTemplateColumns = '1fr 1fr';
+        
+
+    }
 
     
     const handleSearch = async (e) => {
         e.preventDefault();
-        console.log(formData.searchedItem);
         try {
             const response = await axios.get(`http://localhost:8000/verses?text=${formData.searchedItem}`);
+            document.querySelector('#results-container').classList.remove('hidden');
             const responseArray = [...Object.entries(response.data)];
             setResults(responseArray);
         }
         catch(error) {
-            console.log('error happened');
+            console.log('error happened', error);
         }
 
     };
 
-
-
     return(
         <div>
-            <div className="search-poem-background">
-                <img src={background} alt="" />
-            </div>
             <div className="search-poem-container">
+                {headerMenu}
                 <div className="search-box">
                     <input 
-                    type="text"
-                    name="searchedItem"
-                    value={formData.searchedItem}
-                    onChange={handleInputChange}
-                    placeholder="قسمتی از شعر خود را وارد نمایید" />
+                     type="text"
+                     name="searchedItem"
+                     value={formData.searchedItem}
+                     onChange={handleInputChange}
+                     placeholder="قسمتی از شعر خود را وارد نمایید" />
                     <button onClick={handleSearch}>جستجو</button>
                 </div>
-                <div className="results-container">
+                <div className="results-container hidden" id="results-container">
                 {results.length > 0 ? (
                 results.map((obj, index) => {
                     const [stringIndex, poemData] = obj;
-                    console.log(poemData);
                     return <p key={index} className="search-result">
                         {poemData.poem_id.title} - {poemData.poem_id.artist} - {poemData.text}
                         </p>
@@ -65,6 +89,9 @@ function SearchPoem(props) {
                     )}
                 </div>
             </div>
+            {/* <div className="search-poem-background">
+                <img src={background} alt="" id="search-img" />
+            </div> */}
         </div>
     )
 }

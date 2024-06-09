@@ -778,6 +778,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .header-menu {
@@ -809,6 +810,18 @@ img {
   font-size: 20px;
 }
 
+.random-container {
+  position: absolute;
+  z-index: 0;
+  width: 60%;
+  height: 400px;
+  top: 10%;
+  background-color: rgba(245, 222, 179, 0.9);
+  border-radius: 20px;
+  border: 2px solid black;
+  opacity: 0.9;
+}
+
 #home-container {
   display: grid;
   width: 50%;
@@ -818,7 +831,7 @@ img {
   grid-template-columns: 1fr 1fr;
   box-sizing: border-box;
   position: absolute;
-  top: 5%;
+  top: 30%;
   z-index: 0;
 
 }
@@ -1377,38 +1390,42 @@ img {
 
 .search-poem-background {
   width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   z-index: -1;
+  background-repeat: repeat-y;
+  background-position: bottom;
 }
 
 .search-poem-background img {
-  height: 200vh;
+  width: 100%;
+  height: 100%;
+  filter: blur(2px);
 }
 
 .search-poem-container {
-  width: 70%;
-  height: 500px;
-  position: absolute;
+  width: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  z-index: 0;
   border-radius: 20px;
-  top: 15%;
-  left: 15%;
-  background-color: rgba(30, 45, 82, 0.85);
+  margin: 200px auto;
+  background-color: rgba(0, 0, 0, 0.6);
   border: 4px dotted yellow;
 }
 
 .search-box {
-  margin-top: 20px;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 80%;
-  height: 30%;
+  width: 100%;
+
 }
 
 .search-box input {
@@ -1417,40 +1434,37 @@ img {
   font-family: var(--normal-font);
   font-size: 18px;
   width: 50%;
-  height: 22%;
+  height: 30px;
   border-radius: 10px;
   direction: rtl;
-  margin-bottom: 20px;
+  margin-bottom: 40px auto;
 }
 
-.search-box input:focus {
-  border: none;
-}
 
 .search-box button {
   font-family: var(--normal-font);
   background-color: yellow;
+  opacity: 1;
   border: none;
   font-size: 20px;
   width: 18%;
   height: 37px;
+  margin: 60px 0 80px 0;
   border-radius: 15px;
 }
 
 .search-box button:hover {
   background-color: orangered;
   font-weight: bolder;
+  color: white;
 }
 
 .results-container {
-  width: 70%;
+  width: 90%;
   height: fit-content;
   border-radius: 20px;
   background-color: white;
-  /* position: absolute;
-  z-index: 1;
-  top: 35%;
-  left: 15%; */
+  margin-bottom: 70px;
 }
 
 .results-container p {
@@ -1460,10 +1474,10 @@ img {
   width: 100%;
   font-family: var(--normal-font);
   font-size: 18px;
-  margin: 10px 0;
+  margin: 3px 0;
   padding: 10px;
 }
 
-.search-not-found {
-
+.hidden {
+  display: none;
 }
