@@ -6,13 +6,18 @@ import axios from "axios";
 
 function HomePage(props) {
     const [data, setData] = useState(null);
+    const [random, setRandom] = useState(null);
     // const [numOfVerses, setNumOfVerses] = useState(null);
+
+
 
     useEffect(() => {
         const fetchData = async() => {
             try {
                 const response = await axios.get(`http://127.0.0.1:8000/random`);
+                let dataArray = [...Object.entries(response.data)];
                 setData(response.data);
+                handleVerses(dataArray);
                 // setNumOfVerses(response.data.length);
               } catch (error) {
                 console.error('Error fetching data:', error);
@@ -25,6 +30,24 @@ function HomePage(props) {
     //     const array = Object.entries(data);
     //     console.log(array);
     // }
+
+    const handleVerses = async (dataArray) => {
+        const verses = dataArray.map((obj, index) => {
+            const [data1, response] = obj;
+            return (
+                <div key={index}>
+                    <p key={index}>{response.text}</p>
+                </div>
+            );
+        });
+
+        let poemLines = parseInt(dataArray.length) / 2;
+        const randomContainer = document.querySelector('.random-container');
+        randomContainer.style.display = 'grid';
+        randomContainer.style.gridTemplateColumns = '1fr 1fr';
+        randomContainer.style.gridTemplateRows =`repeat(${poemLines}, 1fr)`;
+        setRandom(verses);
+    }
 
     
     const token = localStorage.getItem('jwtToken')
@@ -54,14 +77,16 @@ function HomePage(props) {
                 <img src={background} alt="" />
             </div>
             {headerMenu}
-            <div className="random-container">
                 {data ? (
-                    <div>
+                    <div className="random-container">
+                        {random}
                     </div>
                 ) : (
-                    <p>در حال دریافت</p>
+                    <div className="random-container">
+                        <p>در حال دریافت</p>
+                    </div>
                 )}
-            </div>
+
             <div id="home-container">
                 <div className="section top-left">
                     <Link to={'/list-of-poems'}>اشعار</Link>
