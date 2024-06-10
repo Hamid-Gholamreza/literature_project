@@ -24,12 +24,12 @@ function RegistrationForm(props) {
         e.preventDefault();
 
         try {
-            // if (formData.password !== formData.re_password) {
-            //     console.error('Passwords do not match');
-            //     return;
-            //   }
             const response = await axios.post('http://127.0.0.1:8000/auth/users/', formData);
-            console.log(response.data);
+            if (response.status === 201) {
+                console.log('registration was successful');
+                window.history.replaceState(null, null, '/login');
+                window.location.reload();
+            }
         }
         catch(error) {
             console.error('Registration failed:', error.message);
@@ -82,6 +82,8 @@ function RegistrationForm(props) {
                             <input type="submit" value="ثبت نام" className="submit-register" id="submit-register"/>
                         </div>
                     </form>
+                </div>
+                <div className="registratin-alert">
                 </div>
             </div>
         )

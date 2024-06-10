@@ -165,6 +165,9 @@ label {
 }
 
 .field-container input {
+  font-family: var(--normal-font);
+  font-size: 18px;
+  padding: 2px;
   border-radius: 10px;
   width: 90%;
   display: flex;
@@ -407,6 +410,12 @@ label {
 
 .field-div {
   height: 30px;
+}
+
+.field-div input {
+  font-family: var(--normal-font);
+  font-size: 18px;
+  padding-right: 2px;
 }
 
 #submit-register {

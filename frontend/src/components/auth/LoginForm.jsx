@@ -28,7 +28,6 @@ function LoginForm() {
       localStorage.setItem('jwtToken', token);
       window.history.replaceState(null, null, '/home');
       window.location.reload();
-      // Redirect to a protected route if needed
     } catch (error) {
       console.error('Login failed:', error.message);
     }
