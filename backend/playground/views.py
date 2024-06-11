@@ -79,7 +79,6 @@ class VerseListView(generics.ListAPIView):
         text = self.request.GET.get('text')
         if text:
             filtered_queryset = self.queryset.filter(text__icontains=text)
-
             serializer = VerseSerializer(filtered_queryset, many=True)
             return Response(serializer.data)
         else:
@@ -100,7 +99,7 @@ def random_verse(request):
     """
     List of verses that chosen randomly.
     """
-    count_of_poems = Poem.objects.count() # 0....199
+    count_of_poems = random.randrange(1, 178) # 0....178
     random_num = int(random.uniform(0, count_of_poems - 1))
     query_set = Verse.objects.filter(poem_id=random_num)
     serializer = VerseSerializer(query_set, many=True)
