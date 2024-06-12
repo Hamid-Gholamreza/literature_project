@@ -7,7 +7,6 @@ import axios from "axios";
 function HomePage(props) {
     const [data, setData] = useState(null);
     const [random, setRandom] = useState(null);
-    // const [numOfVerses, setNumOfVerses] = useState(null);
 
 
 
@@ -18,7 +17,6 @@ function HomePage(props) {
                 let dataArray = [...Object.entries(response.data)];
                 setData(response.data);
                 handleVerses(dataArray);
-                // setNumOfVerses(response.data.length);
               } catch (error) {
                 console.error('Error fetching data:', error);
               }
@@ -26,10 +24,6 @@ function HomePage(props) {
         fetchData();
     }, []);
 
-    // const handleVerses = async () => {
-    //     const array = Object.entries(data);
-    //     console.log(array);
-    // }
 
     const handleVerses = async (dataArray) => {
         const verses = dataArray.map((obj, index) => {
@@ -39,6 +33,8 @@ function HomePage(props) {
                     <p key={index}>{response.text}</p>
                 </div>
             );
+
+            
         });
 
         let poemLines = parseInt(dataArray.length) / 2;
@@ -57,7 +53,7 @@ function HomePage(props) {
     if (isAuthorized) {
         headerMenu = <div className="header-menu">
                         <Link to='/logout'>خروج</Link>
-                        <Link to='/login'>حساب کاربری</Link>
+                        <Link to='/profile'>حساب کاربری</Link>
                         <Link to='search-poem' id="search">جستجو در اشعار</Link>
                     </div>
     }
@@ -69,7 +65,6 @@ function HomePage(props) {
     </div>
     }
 
-    // handleVerses();
 
     return (
         <div className="home">
@@ -95,7 +90,7 @@ function HomePage(props) {
                     <Link to={'/list-of-audios'}>فایل های صوتی</Link>
                 </div>
                 <div className="section bottom-left">
-                    <Link>تکنیک ها</Link>
+                    <Link to={'/list-of-techniques'}>تکنیک ها</Link>
                 </div>
                 <div className="section bottom-right">
                     <Link>همه فایل ها</Link>

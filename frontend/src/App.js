@@ -9,6 +9,8 @@ import Poem from './components/Poem';
 import ListOfPoems from './components/ListOfPoems';
 import ListOfAudios from './components/ListOfAudios';
 import NotFound404 from './components/NotFound404';
+import ListOfTechniques from './components/ListOfTechniques';
+import Profile from './components/Profile';
 import { BrowserRouter as Router ,Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
             <Route path='/list-of-poems' Component={ListOfPoems} />
             <Route path='/list-of-audios' Component={ListOfAudios} />
             <Route path='/search-poem' Component={SearchPoem} />
+            <Route path='/profile' Component={Profile} />
+            <Route path='/list-of-techniques' Component={ListOfTechniques} />
         </Routes>
     </Router>
   );

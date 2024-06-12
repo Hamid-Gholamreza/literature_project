@@ -510,13 +510,13 @@ label {
   margin-bottom: 40px;
 }
 
-.poem-header h1 {
+.poem-header {
   font-family: var(--styled-font);
   font-size: 53px;
   font-weight: normal;
 }
 
-.poem-container {
+/* .poem-container {
   position: absolute;
   z-index: 0;
   display: flex;
@@ -531,27 +531,38 @@ label {
   width: 40%;
   left: 30%;
   top: 30%;
-}
+} */
 
 .poem-text {
+  font-family: var(--styled-font);
+  font-size: 30px;
+  float: right;
   width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 0;
-}
-
-.poem {
-  display: inline;
-  font-family: var(--styled-font);
-  font-size: 30px;
-  margin: 0;
-  direction: rtl;
-  float: right;
-  width: 50%;
-  padding: 0 30px;
   box-sizing: border-box;
 }
+
+.poem-container {
+  font-family: var(--styled-font);
+  font-size: 30px;
+  position: absolute;
+  z-index: 0;
+  width: 40%;
+  height: fit-content;
+  top: 20%;
+  left: 30%;
+  background-color: #c78065;
+  border-radius: 20px;
+  opacity: 0.9;
+  padding: 20px 0;
+}
+
+.poem-container p {
+  text-align: center;
+}
+
 
 .text-container {
   width: 100%;
@@ -594,9 +605,6 @@ label {
   color: white;
 }
 
-.back {
-  background-color: black;
-}
 
 
 @media screen and (max-width: 1442px){
@@ -829,7 +837,6 @@ img {
   top: 10%;
   background-color: rgba(245, 222, 179, 0.9);
   border-radius: 20px;
-  border: 2px solid black;
   opacity: 0.9;
   padding: 20px 0;
 }
@@ -847,7 +854,7 @@ img {
   grid-template-columns: 1fr 1fr;
   box-sizing: border-box;
   position: absolute;
-  top: 30%;
+  top: 23%;
   z-index: 0;
 
 }
@@ -1496,4 +1503,33 @@ img {
 
 .hidden {
   display: none;
+}
+
+/************************************** List of techniques section ***********************************************/
+
+.list-of-techniques-background {
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+}
+
+.list-of-techniques-background img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 65%;
+  height: 100%;
+}
+
+.list-of-techniques-container {
+  position: absolute;
+  z-index: 0;
+  top: 17%;
+  left: 25%;
+  width: 50%;
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
 }

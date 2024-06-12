@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function SearchPoem(props) {
 
-    const token = localStorage.getItem('jwtToken')
+    const token = localStorage.getItem('jwtToken');
     const isAuthorized = !!token;
     let headerMenu;
 
