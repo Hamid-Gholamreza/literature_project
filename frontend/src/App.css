@@ -1524,6 +1524,9 @@ img {
 }
 
 .list-of-techniques-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   z-index: 0;
   top: 17%;
@@ -1532,4 +1535,16 @@ img {
   height: 500px;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 20px;
+}
+
+.list-of-techniques-container a {
+  text-decoration: none;
+  color: white;
+  font-family: var(--normal-font);
+  font-size: 25px;
+}
+
+.list-of-techniques-container a:hover {
+  color: yellow;
+  font-weight: bold;
 }

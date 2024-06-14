@@ -10,6 +10,7 @@ import ListOfPoems from './components/ListOfPoems';
 import ListOfAudios from './components/ListOfAudios';
 import NotFound404 from './components/NotFound404';
 import ListOfTechniques from './components/ListOfTechniques';
+import Technique from './components/Technique';
 import Profile from './components/Profile';
 import { BrowserRouter as Router ,Routes, Route } from 'react-router-dom';
 
@@ -31,6 +32,7 @@ function App() {
             <Route path='/search-poem' Component={SearchPoem} />
             <Route path='/profile' Component={Profile} />
             <Route path='/list-of-techniques' Component={ListOfTechniques} />
+            <Route path='/technique/khayyam' Component={Technique} />
         </Routes>
     </Router>
   );

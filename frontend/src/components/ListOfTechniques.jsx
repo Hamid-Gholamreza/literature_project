@@ -12,7 +12,7 @@ function ListOfTechniques(props) {
                 <img src={background} alt="" />
             </div>
             <div className="list-of-techniques-container">
-                
+                <Link to={'/technique/khayyam'}>تکنیک های اشعار خیام</Link>
             </div>
         </div>
     );
