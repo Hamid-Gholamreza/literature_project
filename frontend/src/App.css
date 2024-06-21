@@ -1548,3 +1548,332 @@ img {
   color: yellow;
   font-weight: bold;
 }
+
+/************************************** Technique section ***********************************************/
+
+.technique-background-image {
+  height: 4500px;
+}
+
+.technique-background-image img {
+  position: relative;
+  z-index: -1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  max-width: 100%;
+  height: 100%;
+}
+
+.technique-container {
+  position: absolute;
+  z-index: 0;
+  top: 1%;
+  left: 10%;
+  font-family: var(--normal-font);
+  background-color: rgba(255, 255, 255, 0.65);
+  margin: 70px auto;
+  border: 4px dotted black;
+  border-radius: 15px;
+  direction: rtl;
+  width: 80%;
+  height: fit-content;
+}
+
+.technique-container h1 {
+  font-family: var(--styled-font);
+  text-align: center;
+  width: 100%;
+  margin: 20px auto;
+  font-weight: bolder;
+  font-size: 50px;
+}
+
+.technique-container h2 {
+  text-align: center;
+  margin: 20px auto;
+  font-weight: bolder;
+}
+
+.technique-container p {
+  margin: auto 20px;
+}
+
+
+.poem-message {
+  font-family: var(--styled-font);
+  text-align: center;
+  font-size: 27px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin: 25px auto;
+}
+
+.message {
+  margin: 20px auto;
+  font-size: 20px;
+}
+
+
+@media screen and (max-width: 1200px) {
+
+  .technique-background-image {
+    height: 4200px;
+  }
+  
+  .technique-container h2 {
+    margin: 20px 20px;
+    font-size: 20px;
+  }
+
+  .poem-message {
+    margin: 15px auto;
+  }
+
+  .message {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 1065px) {
+
+  .technique-background-image {
+    height: 4000px;
+  }
+  
+  .technique-container h1 {
+    font-size: 45px;
+  }
+
+  .technique-container h2 {
+    margin: 15px 20px;
+  }
+}
+
+@media screen and (max-width: 940px) {
+
+  .technique-background-image {
+    height: 3650px;
+  }
+
+  .poem-message {
+    margin: 10px auto;
+  }
+
+  .message {
+    font-size: 16px;
+  }
+
+  .technique-container { 
+    top: 0;
+  }
+
+  .technique-container h2 {
+    font-size: 18px;
+  }
+
+  .poem-message {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 832px) {
+
+  .technique-background-image {
+    height: 3550px;
+  }
+
+  .technique-container h1 {
+    font-size: 40px;
+  }
+
+  .technique-container h2 {
+    margin: 12px 20px;
+  }
+
+  .poem-message {
+    margin: 12px auto;
+  }
+}
+
+@media screen and (max-width: 735px) {
+
+  .technique-background-image {
+    height: 3200px;
+  }
+  
+  .technique-container {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 6%;
+    width: 85%;
+  }
+
+  .poem-message {
+    margin: 10px auto;
+    font-size: 23px;
+  }
+
+  .technique-container h2 {
+    font-size: 16px;
+    margin: 10px 20px;
+  }
+
+  .message {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 621px) {
+
+  .technique-container {
+    width: 87%;
+  }
+
+  .technique-container {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 5.5%;
+    width: 85%;
+  }
+
+  .technique-background-image {
+    height: 2870px;
+  }
+
+  .technique-container h1 {
+    font-size: 35px;
+    margin: 0;
+  }
+
+  .technique-container h2 {
+    font-size: 15px;
+    margin: 8px 20px;
+  }
+
+  .poem-message {
+    margin: 5px auto;
+    font-size: 21px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+
+  .technique-background-image {
+    height: 2650px;
+  }
+
+  .message {
+    font-size: 13px;
+  }
+
+  .poem-message {
+    margin: 0 auto;
+  }
+
+  .technique-container h2 {
+    font-size: 14px;
+    margin: 4px 20px;
+  }
+}
+
+@media screen and (max-width: 535px) {
+
+  .technique-background-image {
+    height: 2550px;
+  }
+  
+  .technique-container h1 {
+    font-size: 28px;
+  }
+
+  .technique-container h2 {
+    font-size: 13px;
+    margin: 3px 20px;
+  }
+
+  .poem-message {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 485px) {
+
+  .technique-background-image {
+    height: 2350px;
+  }
+
+  .technique-container h1 {
+    font-size: 26px;
+  }
+  
+  .message {
+    font-size: 12px;
+  }
+
+  .poem-message {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+
+  .technique-background-image {
+    height: 1600px;
+  }
+
+  .technique-container {
+    margin: 35px auto;
+  }
+
+  .technique-container {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 5%;
+    width: 87%;
+  }
+
+  .poem-message {
+    font-size: 12px;
+  }
+
+  .message {
+    font-size: 8px;
+  }
+
+  .technique-container h1 {
+    font-size: 20px;
+  }
+
+  .technique-container h2 {
+    font-size: 9px;
+    margin: 5px 20px;
+  }
+}
+
+@media screen and (max-width: 359px) {
+
+  .technique-background-image {
+    height: 1450px;
+  }
+  
+  .technique-container h1 {
+    font-size: 18px;
+  }
+
+  .poem-message {
+    font-size: 10px;
+  }
+
+  .technique-container h2 {
+    font-size: 8px;
+  }
+
+  .message {
+    margin: 10px auto;
+  }
+}

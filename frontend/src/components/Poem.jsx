@@ -39,9 +39,6 @@ function Poem(props) {
         );
       });
 
-    const returnHeader = (header) => {
-      
-    }
       
       let poemLines = parseInt(dataArray.length) / 2;
       const poemContainer = document.querySelector('.poem-text');
