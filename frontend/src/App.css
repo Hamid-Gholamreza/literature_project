@@ -516,23 +516,6 @@ label {
   font-weight: normal;
 }
 
-/* .poem-container {
-  position: absolute;
-  z-index: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 450px;
-  background-color: #c78065;
-  border-radius: 20px;
-  font-size: 23px;
-  font-weight: normal;
-  width: 40%;
-  left: 30%;
-  top: 30%;
-} */
-
 .poem-text {
   font-family: var(--styled-font);
   font-size: 30px;
@@ -1876,4 +1859,46 @@ img {
   .message {
     margin: 10px auto;
   }
+}
+
+/************************************** Audio section ***********************************************/
+
+.audio-background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 90%;
+  height: 100vh;
+  position: relative;
+  z-index: -1;
+}
+
+.audio-background img {
+  height: 100%;
+}
+
+.audio-container {
+  position: absolute;
+  z-index: 0;
+  width: 50%;
+  height: 80%;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 20px;
+  top: 10%;
+  left: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.audio-container p {
+  font-family: var(--normal-font);
+  font-size: 20px;
+}
+
+.audio-player {
+  border-radius: 20px;
+  margin: 20px auto;
 }

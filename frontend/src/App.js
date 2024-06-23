@@ -12,6 +12,7 @@ import NotFound404 from './components/NotFound404';
 import ListOfTechniques from './components/ListOfTechniques';
 import Technique from './components/Technique';
 import Profile from './components/Profile';
+import Audio from './components/Audio';
 import { BrowserRouter as Router ,Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
             <Route path='/profile' Component={Profile} />
             <Route path='/list-of-techniques' Component={ListOfTechniques} />
             <Route path='/technique/khayyam' Component={Technique} />
+            <Route path='/audio/khayyam' Component={Audio} />
         </Routes>
     </Router>
   );
