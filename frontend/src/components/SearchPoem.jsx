@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import background from '../images/search-poem-background.png';
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -12,19 +11,23 @@ function SearchPoem(props) {
     let headerMenu;
 
     if (isAuthorized) {
-        headerMenu = <div className="header-menu">
-                                <Link to='/logout'>خروج</Link>
-                                <Link to='/login'>حساب کاربری</Link>
-                                <Link to='search-poem' id="search">جستجو در اشعار</Link>
+        headerMenu = <div className="search-header">
+                        <Link to='/logout'>خروج</Link>
+                        <Link to='/profile'>حساب کاربری</Link>
+                        <Link to='/search-poem' id="search">جستجو در اشعار</Link>
+                        <Link to={'/home'} className="header-homepage">صفحه اصلی</Link>
                     </div>
     }
+
     else {
-        headerMenu = <div className="header-menu">
+        headerMenu = <div className="header-menu search-header">
         <Link to='/register'>ثبت نام</Link>
         <Link to='/login'>ورود</Link>
         <Link to='/search-poem'>جستجو در اشعار</Link>
-    </div>       
+        <Link to={'/home'} className="header-homepage">صفحه اصلی</Link>
+    </div>
     }
+
     
     const [formData, setFormData] = useState({
         searchedItem: '',
@@ -43,8 +46,6 @@ function SearchPoem(props) {
         const resultContainer = document.querySelector('.results-container');
         resultContainer.style.display = 'grid';
         resultContainer.style.gridTemplateColumns = '1fr 1fr';
-        
-
     }
 
     
@@ -89,9 +90,6 @@ function SearchPoem(props) {
                     )}
                 </div>
             </div>
-            {/* <div className="search-poem-background">
-                <img src={background} alt="" id="search-img" />
-            </div> */}
         </div>
     )
 }

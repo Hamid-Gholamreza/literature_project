@@ -40,6 +40,10 @@ function RegistrationForm(props) {
         return(
             <div className="background">
                 <img src={picture} alt="picture" className="login-picture" />
+                <div className="header-home">
+                    <Link to='/search-poem'>جستجو در اشعار</Link>
+                    <Link to='/home'>صفحه اصلی</Link>
+                </div>
                 <div className="form">
                     <div className="switch-form">                        
                         <Link to={'/login'} className="links" id="login">ورود</Link>

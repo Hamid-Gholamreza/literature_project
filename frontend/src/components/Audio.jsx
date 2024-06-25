@@ -4,14 +4,14 @@ import audio1 from '../audios/Khayyam-audio1.mp3';
 import audio2 from '../audios/Khayyam-audio2.mp3'; 
 import audio3 from '../audios/Khayyam-audio3.mp3'; 
 import audio4 from '../audios/Khayyam-audio4.mp3'; 
-import audio5 from '../audios/Khayyam-audio5.mp3'; 
+import audio5 from '../audios/Khayyam-audio5.mp3';
+import { Link } from 'react-router-dom';
 
-function Audio() {
+function Audio(props) {
       
       const handleError = (event) => {
         console.error('Error loading media:', event.target.error);
       };
-
 
   return (
     <div>
@@ -39,6 +39,7 @@ function Audio() {
             <source src={audio5} />
         </audio>
         <p>قسمت پنجم - رباعیات 149 تا 178</p>
+        <button><Link to={'/home'}>بازگشت به صفحه اصلی</Link></button>
       </div>
     </div>
   );

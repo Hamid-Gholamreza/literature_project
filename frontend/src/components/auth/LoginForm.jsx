@@ -37,6 +37,10 @@ function LoginForm() {
     <div>
       <div>
         <img src={picture} alt="picture" className="login-picture" />
+          <div className="header-home">
+            <Link to='/search-poem'>جستجو در اشعار</Link>
+            <Link to='/home'>صفحه اصلی</Link>
+          </div>
       </div>
       <div className="form">
         <div className="switch-form">
@@ -84,12 +88,12 @@ function LoginForm() {
           <div className="field-container">
             <input type="submit" value="ورود" />
           </div>
-          <div className="field-container forget-password">
+          {/* <div className="field-container forget-password">
             <p>
               رمز عبور را فراموش کرده اید؟    
               <Link to={'/forget-password'}>فراموشی رمز عبور</Link>
             </p>
-          </div>
+          </div> */}
         </form>
       </div>
     </div>

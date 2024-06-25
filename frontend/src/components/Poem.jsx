@@ -11,6 +11,7 @@ function Poem(props) {
     const [data, setData] = useState(null);
     const [poem, setPoem] = useState(null);
     const [header, setHeader] = useState(null);
+    const [status, setStatus] = useState(null);
     const { id } = useParams();
 
     useEffect(() => {
@@ -21,7 +22,9 @@ function Poem(props) {
                 setData(response.data);
                 handleVerses(dataArray);
               } catch (error) {
-                console.error('Error fetching data:', error);
+                if (error.response.status === 404) {
+                  setStatus(error.response.status);
+                }
               }
         };
         fetchData();
@@ -48,28 +51,35 @@ function Poem(props) {
       setPoem(verses);
     }
 
-    return (
-        <div>
+        return (
           <div>
+            {status === 404 ? (
+              <NotFound404 />
+            ) : (
               <div>
-                  <img src={picture} alt="poem background" className="poem-background" />
+              <div>
+                  <div>
+                      <img src={picture} alt="poem background" className="poem-background" />
+                  </div>
+                  <div className="poem-container">
+                      <div className="poem-header">
+                          {header}
+                      </div>
+                      <div className="poem-text">
+                          {poem}
+                      </div>
+                      <div className="button-container">
+                          <button><Link to={`/poem/${parseInt(id) - 1}`}>شعر قبلی</Link></button>
+                          <button><Link to={`/home`}>صفحه اصلی</Link></button>
+                          <button><Link to={`/poem/${parseInt(id) + 1}`}>شعر بعدی</Link></button>
+                      </div>
+                  </div>
               </div>
-              <div className="poem-container">
-                  <div className="poem-header">
-                      {header}
-                  </div>
-                  <div className="poem-text">
-                      {poem}
-                  </div>
-                  <div className="button-container">
-                      <button><Link to={`/poem/${parseInt(id) - 1}`}>شعر قبلی</Link></button>
-                      <button><Link to={`/poem/${parseInt(id) + 1}`}>شعر بعدی</Link></button>
-                  </div>
-              </div>
-          </div>
+            </div>
+          )}
         </div>
-    );
-}
+      );
+    };
 
 
 export default Poem;

@@ -51,14 +51,14 @@ function HomePage(props) {
     let headerMenu;
 
     if (isAuthorized) {
-        headerMenu = <div className="header-menu">
+        headerMenu = <div className="header-home">
                         <Link to='/logout'>خروج</Link>
                         <Link to='/profile'>حساب کاربری</Link>
-                        <Link to='search-poem' id="search">جستجو در اشعار</Link>
+                        <Link to='/search-poem' id="search">جستجو در اشعار</Link>
                     </div>
     }
     else {
-        headerMenu = <div className="header-menu">
+        headerMenu = <div className="header-home">
         <Link to='/register'>ثبت نام</Link>
         <Link to='/login'>ورود</Link>
         <Link to='/search-poem'>جستجو در اشعار</Link>
@@ -72,6 +72,7 @@ function HomePage(props) {
                 <img src={background} alt="" />
             </div>
             {headerMenu}
+            <h1 className="title-homepage">کافه شعر</h1>
                 {data ? (
                     <div className="random-container">
                         {random}
@@ -83,17 +84,14 @@ function HomePage(props) {
                 )}
 
             <div id="home-container">
-                <div className="section top-left">
+                <div className="section left">
                     <Link to={'/list-of-poems'}>اشعار</Link>
                 </div>
-                <div className="section top-right">
+                <div className="section">
                     <Link to={'/list-of-audios'}>فایل های صوتی</Link>
                 </div>
-                <div className="section bottom-left">
+                <div className="section right">
                     <Link to={'/list-of-techniques'}>تکنیک ها</Link>
-                </div>
-                <div className="section bottom-right">
-                    <Link>همه فایل ها</Link>
                 </div>
             </div>
         </div>
