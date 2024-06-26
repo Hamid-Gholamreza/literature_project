@@ -8,7 +8,6 @@ import HomePage from './components/HomePage';
 import Poem from './components/Poem';
 import ListOfPoems from './components/ListOfPoems';
 import ListOfAudios from './components/ListOfAudios';
-import NotFound404 from './components/NotFound404';
 import ListOfTechniques from './components/ListOfTechniques';
 import Technique from './components/Technique';
 import Profile from './components/Profile';
@@ -20,7 +19,6 @@ function App() {
     <Router>
         <Routes>
               <Route path='/register' Component={RegistrationForm}/>
-              <Route path='/404' Component={NotFound404} />
               <Route path='/logout' Component={LogoutForm}/>
               <Route path='/login' Component={LoginForm}/>
               <Route path='/forget-password' Component={ForgetPassword} />

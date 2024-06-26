@@ -13,7 +13,6 @@ function SearchPoem(props) {
     if (isAuthorized) {
         headerMenu = <div className="search-header">
                         <Link to='/logout'>خروج</Link>
-                        <Link to='/profile'>حساب کاربری</Link>
                         <Link to='/search-poem' id="search">جستجو در اشعار</Link>
                         <Link to={'/home'} className="header-homepage">صفحه اصلی</Link>
                     </div>
@@ -52,7 +51,7 @@ function SearchPoem(props) {
     const handleSearch = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.get(`http://localhost:8000/verses?text=${formData.searchedItem}`);
+            const response = await axios.get(`https://khayyam-website.liara.run/verses?text=${formData.searchedItem}`);
             document.querySelector('#results-container').classList.remove('hidden');
             const responseArray = [...Object.entries(response.data)];
             setResults(responseArray);

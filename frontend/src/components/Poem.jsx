@@ -17,7 +17,7 @@ function Poem(props) {
     useEffect(() => {
         const fetchData = async() => {
             try {
-                const response = await axios.get(`http://127.0.0.1:8000/verses/${id}`);
+                const response = await axios.get(`https://khayyam-website.liara.run/verses/${id}`);
                 let dataArray = [...Object.entries(response.data)];
                 setData(response.data);
                 handleVerses(dataArray);
@@ -34,6 +34,7 @@ function Poem(props) {
       const verses = dataArray.map((obj, index) => {
         const [data1, response] = obj;
         setHeader(response.poem_id.title);
+        console.log(response.text)
         return (
           <div key={index}>
             <p key={index}>{response.text}</p>

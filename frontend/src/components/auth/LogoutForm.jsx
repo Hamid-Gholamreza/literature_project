@@ -9,7 +9,7 @@ function LogoutForm(props) {
     const handleLogout = async() => {
         try {
             localStorage.removeItem('jwtToken');
-            await axios.delete('http://localhost:8000/auth/users/me/');
+            await axios.delete('https://khayyam-website.liara.run/auth/users/me/');
         }
         catch(error) {
             console.error('Error logging out', error);

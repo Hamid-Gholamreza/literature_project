@@ -13,7 +13,7 @@ function HomePage(props) {
     useEffect(() => {
         const fetchData = async() => {
             try {
-                const response = await axios.get(`http://127.0.0.1:8000/random`);
+                const response = await axios.get(`https://khayyam-website.liara.run/random`);
                 let dataArray = [...Object.entries(response.data)];
                 setData(response.data);
                 handleVerses(dataArray);
@@ -53,7 +53,6 @@ function HomePage(props) {
     if (isAuthorized) {
         headerMenu = <div className="header-home">
                         <Link to='/logout'>خروج</Link>
-                        <Link to='/profile'>حساب کاربری</Link>
                         <Link to='/search-poem' id="search">جستجو در اشعار</Link>
                     </div>
     }

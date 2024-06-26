@@ -15,6 +15,8 @@ function RegistrationForm(props) {
         re_password: '',
     });
 
+    const [status, setStatus] = useState(null);
+
     const handleInputChange = (e) => {
         const {name, value} = e.target;
         setFormData({...formData, [name]: value
@@ -24,19 +26,42 @@ function RegistrationForm(props) {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://127.0.0.1:8000/auth/users/', formData);
+            const response = await axios.post('https://khayyam-website.liara.run/auth/users/', formData);
             if (response.status === 201) {
-                console.log('registration was successful');
+                console.log('hi')
+                let alert = document.querySelector('.registration-alert');
+                alert.classList.add('registration-success-alert');
+                const paragraph = document.createElement('p');
+                paragraph.textContent = 'ثبت نام با موفقیت انجام شد';
+                alert.appendChild(paragraph);
+                setStatus(response.status);
+                setTimeout(() => {
+                    alert.classList.remove('registration-success-alert');
+                    alert.removeChild(paragraph);
+                }, 3000);
                 window.history.replaceState(null, null, '/login');
                 window.location.reload();
             }
         }
         catch(error) {
+            document.querySelector('.registration-alert').style.display = 'block';
+            let alert = document.querySelector('.registration-alert');
+            alert.classList.remove('registration-success-alert');
+            alert.classList.add('registration-fail-alert');
+            const paragraph = document.createElement('p');
+            paragraph.classList.add('alert-message');
+            paragraph.textContent = '';
+            paragraph.textContent = 'نام کاربری و کلمه عبور را به دقت وارد کنید';
+            alert.appendChild(paragraph);
+            setTimeout(() => {
+                alert.classList.remove('registration-fail-alert');
+                alert.removeChild(paragraph);
+            }, 5000);
             console.error('Registration failed:', error.message);
         }
     }
 
-
+    
         return(
             <div className="background">
                 <img src={picture} alt="picture" className="login-picture" />
@@ -87,10 +112,38 @@ function RegistrationForm(props) {
                         </div>
                     </form>
                 </div>
-                <div className="registratin-alert">
+                <div className="registration-alert">
                 </div>
             </div>
         )
     }
 
 export default RegistrationForm;
+
+
+{/* <div>
+{status === 404 ? (
+  <NotFound404 />
+) : (
+  <div>
+  <div>
+      <div>
+          <img src={picture} alt="poem background" className="poem-background" />
+      </div>
+      <div className="poem-container">
+          <div className="poem-header">
+              {header}
+          </div>
+          <div className="poem-text">
+              {poem}
+          </div>
+          <div className="button-container">
+              <button><Link to={`/poem/${parseInt(id) - 1}`}>شعر قبلی</Link></button>
+              <button><Link to={`/home`}>صفحه اصلی</Link></button>
+              <button><Link to={`/poem/${parseInt(id) + 1}`}>شعر بعدی</Link></button>
+          </div>
+      </div>
+  </div>
+</div>
+)}
+</div> */}

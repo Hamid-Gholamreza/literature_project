@@ -8,6 +8,7 @@ function LoginForm() {
     username: '',
     password: '',
   });
+  const [status, setStatus] = useState(null);
 
 
   const handleInputChange = (e) => {
@@ -20,16 +21,40 @@ function LoginForm() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'http://127.0.0.1:8000/auth/jwt/create',
+        'https://khayyam-website.liara.run/auth/jwt/create',
         formData
       );
       const token = response.data;
-      console.log(localStorage['jwtToken']);
+
+      let alert = document.querySelector('.alert');
+      alert.classList.remove('login-fail-alert');
+      alert.classList.add('login-success-alert');
+      const paragraph = document.createElement('p');
+      paragraph.textContent = 'ورود با موفقیت انجام شد';
+      alert.appendChild(paragraph);
+
+      setTimeout(() => {
+        alert.classList.remove('login-success-alert');
+        alert.removeChild(paragraph);
+    }, 3000);
+
       localStorage.setItem('jwtToken', token);
       window.history.replaceState(null, null, '/home');
       window.location.reload();
-    } catch (error) {
+    } 
+    catch (error) {
       console.error('Login failed:', error.message);
+      let alert = document.querySelector('.alert');
+      alert.classList.remove('login-success-alert');
+      alert.classList.add('login-fail-alert');
+      const paragraph = document.createElement('p');
+      paragraph.textContent = 'نام کاربری یا رمز عبور اشتباه است';
+      alert.appendChild(paragraph);
+      setTimeout(() => {
+        alert.classList.remove('login-fail-alert');
+        alert.removeChild(paragraph);
+    }, 5000);
+      setStatus(error.response.status);
     }
   };
 
@@ -95,6 +120,9 @@ function LoginForm() {
             </p>
           </div> */}
         </form>
+      </div>
+      <div className='alert'>
+          
       </div>
     </div>
   );
