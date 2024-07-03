@@ -54,6 +54,7 @@ function HomePage(props) {
         headerMenu = <div className="header-home">
                         <Link to='/logout'>خروج</Link>
                         <Link to='/search-poem' id="search">جستجو در اشعار</Link>
+                        <Link to='' id="search">جستجو در اشعار</Link>
                     </div>
     }
     else {
