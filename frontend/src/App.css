@@ -2664,3 +2664,16 @@ img {
     left: 15%;
   }
 }
+
+/************************************** Profile section ***********************************************/
+
+.profile-container {
+  width: 80%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #282c34;
+  margin: 100px auto;
+  border-radius: 20px;
+}
