@@ -763,6 +763,10 @@ label {
   background-size: cover;
 }
 
+.poem-background img {
+  width: 100%;
+}
+
 .poem-header {
   width: 100%;
   height: 50px;
@@ -845,6 +849,9 @@ label {
   color: white;
 }
 
+.size-change {
+  font-size: 25px;
+}
 
 
 @media screen and (max-width: 1442px){
@@ -889,6 +896,10 @@ label {
 
 @media screen and (max-width: 790px) {
 
+  .poem-background {
+    height: 100vh;
+  }
+
   .poem-header {
     font-size: 46px;
   }
@@ -931,11 +942,18 @@ label {
   }
 
   .poem-text {
-    font-size: 25px;
+    font-size: 24px;
+    gap: 0;
+    margin: 0;
+    padding: 0;
   }
 }
 
 @media screen and (max-width: 490px) {
+
+  .poem-background {
+    height: 100vh;
+  }
 
   .poem-header {
     height: 30px;
@@ -2038,15 +2056,21 @@ img {
   font-weight: bold;
 }
 
-.results-container p {
+.results-container a {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: fit-content;
   font-family: var(--normal-font);
+  color: black;
   font-size: 18px;
-  margin: 3px 0;
+  margin: 3px auto;
   padding: 10px;
+}
+
+.results-container a:hover {
+  font-weight: bold;
+  font-size: 17px;
 }
 
 
@@ -2071,10 +2095,15 @@ img {
     width: 50%;
   }
   
-  .results-container p {
+  .results-container a {
     font-size: 17px;
-    margin: 3px 0;
+    margin: 3px auto;
     padding: 10px;
+  }
+
+  .results-container a:hover {
+    font-weight: bold;
+    font-size: 16px;
   }
 }
 
@@ -2083,9 +2112,14 @@ img {
     width: 75%;
   }
   
-  .results-container p {
+  .results-container a {
     font-size: 16px;
-    margin: 2px 0;
+    margin: 2px auto;
+  }
+
+  .results-container a:hover {
+    font-weight: bold;
+    font-size: 15px;
   }
 }
 
@@ -2099,10 +2133,15 @@ img {
     width: 80%;
   }
 
-  .results-container p {
+  .results-container a {
     font-size: 15px;
-    margin: 2px 0;
+    margin: 2px auto;
     padding: 10px;
+  }
+
+  .results-container a:hover {
+    font-weight: bold;
+    font-size: 14px;
   }
 }
 
@@ -2116,10 +2155,15 @@ img {
     width: 27%;
   }
 
-  .results-container p {
+  .results-container a {
     font-size: 14px;
-    margin: 1px 0;
+    margin: 1px auto;
     padding: 5px;
+  }
+
+  .results-container a:hover {
+    font-weight: bold;
+    font-size: 13px;
   }
 }
 
@@ -2134,9 +2178,14 @@ img {
     width: 95%;
   }
 
-  .results-container p {
+  .results-container a {
     font-size: 13px;
     padding: 10px;
+  }
+
+  .results-container a:hover {
+    font-weight: bold;
+    font-size: 12px;
   }
 }
 
@@ -2158,9 +2207,10 @@ img {
     width: 32%;
   }
 
-  .results-container p {
-    width: 95%;
+  .results-container a:hover {
+    font-size: 13px;
   }
+
 }
 
 @media screen and (max-width: 410px) {
@@ -2187,6 +2237,10 @@ img {
   .header-menu a:hover {
     font-size: 16px;
   }
+
+  .results-container a:hover {
+    font-size: 13px;
+  }
 }
 
 @media screen and (max-width: 375px) {
@@ -2211,7 +2265,7 @@ img {
   }
 
   .header-menu a:hover {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .search-box button {

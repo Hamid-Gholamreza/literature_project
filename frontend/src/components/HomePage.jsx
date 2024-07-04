@@ -14,6 +14,7 @@ function HomePage(props) {
         const fetchData = async() => {
             try {
                 const response = await axios.get(`https://khayyam-website.liara.run/random`);
+                console.log(response);
                 let dataArray = [...Object.entries(response.data)];
                 setData(response.data);
                 handleVerses(dataArray);
@@ -54,7 +55,6 @@ function HomePage(props) {
         headerMenu = <div className="header-home">
                         <Link to='/logout'>خروج</Link>
                         <Link to='/search-poem' id="search">جستجو در اشعار</Link>
-                        <Link to='' id="search">جستجو در اشعار</Link>
                     </div>
     }
     else {

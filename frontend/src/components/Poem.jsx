@@ -34,17 +34,36 @@ function Poem(props) {
       const verses = dataArray.map((obj, index) => {
         const [data1, response] = obj;
         setHeader(response.poem_id.title);
-        console.log(response.text)
-        return (
+        return (dataArray.length <12 ?
           <div key={index}>
             <p key={index}>{response.text}</p>
-          </div>
-          
+          </div> :
+            <div key={index}>
+                <p key={index} className="size-change">{response.text}</p>
+            </div>
         );
       });
 
       
       let poemLines = parseInt(dataArray.length) / 2;
+
+      if (poemLines > 27) {
+        document.querySelector('.poem-background').style.height = '2800px';
+        document.querySelector('.poem-container').style.top = '5%';
+      }
+      else if (poemLines > 17 && poemLines <27) {
+        document.querySelector('.poem-background').style.height = '1600px';
+        document.querySelector('.poem-container').style.top = '7%';
+        document.querySelector('.poem-container').style.height = '85%';
+      }
+      else if (poemLines > 12 && poemLines <= 16) {
+        document.querySelector('.poem-background').style.height = '1300px';
+        document.querySelector('.poem-container').style.top = '10%';
+      }
+      else if (poemLines > 27) {
+        document.querySelector('.poem-background').style.height = '1900px';
+        document.querySelector('.poem-container').style.top = '7%';
+      }
       const poemContainer = document.querySelector('.poem-text');
       poemContainer.style.display = 'grid';
       poemContainer.style.gridTemplateColumns = '1fr 1fr';
@@ -59,8 +78,8 @@ function Poem(props) {
             ) : (
               <div>
               <div>
-                  <div>
-                      <img src={picture} alt="poem background" className="poem-background" />
+                  <div className="poem-background">
+                      <img src={picture} alt="poem background" />
                   </div>
                   <div className="poem-container">
                       <div className="poem-header">

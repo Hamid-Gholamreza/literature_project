@@ -10,7 +10,7 @@ class ListOfPoems extends Component {
         const linkCount = 174;
 
         const links = Array.from({ length: linkCount }, (_, index) => (
-          <Link key={index} to={`http://localhost:3000/poem/${index + 1}`}>رباعی شماره {index+1}</Link>
+          <Link key={index} to={`/poem/${index + 1}`}>رباعی شماره {index+1}</Link>
         ));
 
         const token = localStorage.getItem('jwtToken');

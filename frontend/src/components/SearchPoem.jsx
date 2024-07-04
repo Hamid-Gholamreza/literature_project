@@ -79,9 +79,9 @@ function SearchPoem(props) {
                 {results.length > 0 ? (
                 results.map((obj, index) => {
                     const [stringIndex, poemData] = obj;
-                    return <p key={index} className="search-result">
+                    return <Link key={index} className="search-result" to={`/poem/${poemData.poem_id.id}`} >
                         {poemData.poem_id.title} - {poemData.poem_id.artist} - {poemData.text}
-                        </p>
+                        </Link>
                         }
                     )
                     ) : (
